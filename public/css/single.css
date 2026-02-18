@@ -1,0 +1,113 @@
+#title {
+    padding-block: 3rem;
+}
+#title.coloring-green {
+    --s: 140px;
+    --c1: var(--primary-700);
+    --c2: var(--primary-500);
+
+    background:
+    linear-gradient(135deg,#0000 18.75%,var(--c1) 0 31.25%,#0000 0),
+    repeating-linear-gradient(45deg,var(--c1) -6.25% 6.25%,var(--c2) 0 18.75%);
+    background-size: var(--s) var(--s); 
+
+    color: var(--background);
+}
+#title.coloring-brown {
+    --s: 140px;
+    --c1: var(--text-800);
+    --c2: var(--text-600);
+
+    background:
+    linear-gradient(135deg,#0000 18.75%,var(--c1) 0 31.25%,#0000 0),
+    repeating-linear-gradient(45deg,var(--c1) -6.25% 6.25%,var(--c2) 0 18.75%);
+    background-size: var(--s) var(--s); 
+
+    color: var(--background);
+}
+
+#content {
+    box-shadow: none;
+}
+#content h2 {
+    margin: 3rem 0 1.5rem 0;
+}
+#content h2:first-of-type {
+    margin-top: 0;
+}
+#content p {
+    margin-bottom: 1.5rem;
+}
+
+.slogan {
+    font-size: 2.1rem;
+    font-weight: bold;
+    margin: 10rem auto;
+    width: fit-content;
+    color: var(--text);
+    position: relative;
+}
+.slogan::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    height: 10px;
+    transform: rotate(-2deg);
+    opacity: 0.5;
+    border-radius: 1rem;
+}
+.slogan.slogan-green::before {
+    background-color: var(--primary-500);
+}
+.slogan.slogan-brown::before {
+    background-color: var(--text-300);
+}
+
+blockquote {
+    border-left: 5px solid;
+    font-style: italic;
+    width: fit-content;
+    padding: 1rem 0 1rem 1rem;
+    margin-bottom: 1rem;
+}
+blockquote p {
+    margin: 0 !important;
+}
+.coloring-green blockquote {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.coloring-brown blockquote {
+    border-color: var(--text-500);
+    color: var(--text-500);
+}
+
+hr {
+    border: none;
+    height: 2px;
+    margin: 4rem auto;
+    width: 60%;
+}
+.coloring-green hr {
+    background-color: var(--primary-300);
+}
+.coloring-brown hr {
+    background-color: var(--text-300);
+}
+
+ul, ol {
+    list-style-position: inside;
+    margin-bottom: 1.5rem;
+}
+ul li, ol li {
+    margin-bottom: 0.5rem;
+}
+
+#content img {
+    width: 350px;
+    margin: 0 auto 3rem auto;
+    border-radius: 100%;
+    display: block;
+}

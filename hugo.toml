@@ -1,0 +1,23 @@
+baseURL = "https://dopenzebezpenze.cz/"
+title = "Do penze bez penze"
+uglyURLs = false
+enableEmoji = true
+
+defaultContentLanguage = 'cs'
+
+[frontmatter]
+    date = ['date', 'publishDate', 'lastmod']
+    expiryDate = ['expiryDate']
+    lastmod = [':git', 'lastmod', 'date', 'publishDate']
+    publishDate = ['publishDate', 'date']
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+    [markup.tableOfContents]
+        ordered = true
+        startLevel = 0
+        endLevel = 3
+[outputs]
+    home = ['HTML', 'JSON', 'RSS']
+    page = ['HTML']

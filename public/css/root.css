@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:700|Raleway:400');
+
+:root {
+    --text: #3b2f2b;
+    --background: #ffffff;
+    --primary: #507c59;
+    --secondary: #f6f1ea;
+    --accent: #7daa86;
+    --alert: #b84b4b;
+
+    --text-50: #f4f1f0;
+    --text-100: #eae3e1;
+    --text-200: #d4c8c4;
+    --text-300: #bfaca6;
+    --text-400: #a99189;
+    --text-500: #94756b;
+    --text-600: #765e56;
+    --text-700: #594640;
+    --text-800: #3b2f2b;
+    --text-900: #1e1715;
+    --text-950: #0f0c0b;
+
+    --background-50: #f2f2f2;
+    --background-100: #e6e6e6;
+    --background-200: #cccccc;
+    --background-300: #b3b3b3;
+    --background-400: #999999;
+    --background-500: #808080;
+    --background-600: #666666;
+    --background-700: #4d4d4d;
+    --background-800: #333333;
+    --background-900: #1a1a1a;
+    --background-950: #0d0d0d;
+
+    --primary-50: #eff5f1;
+    --primary-100: #e0ebe2;
+    --primary-200: #c1d7c5;
+    --primary-300: #a2c3a8;
+    --primary-400: #83af8c;
+    --primary-500: #639c6f;
+    --primary-600: #507c59;
+    --primary-700: #3c5d42;
+    --primary-800: #283e2c;
+    --primary-900: #141f16;
+    --primary-950: #0a100b;
+
+    --secondary-50: #f7f3ed;
+    --secondary-100: #f0e7db;
+    --secondary-200: #e0cfb8;
+    --secondary-300: #d1b894;
+    --secondary-400: #c2a070;
+    --secondary-500: #b3884d;
+    --secondary-600: #8f6d3d;
+    --secondary-700: #6b522e;
+    --secondary-800: #47361f;
+    --secondary-900: #241b0f;
+    --secondary-950: #120e08;
+
+    --accent-50: #f0f5f1;
+    --accent-100: #e0ebe2;
+    --accent-200: #c1d7c6;
+    --accent-300: #a2c3a9;
+    --accent-400: #84ae8c;
+    --accent-500: #659a6f;
+    --accent-600: #517b59;
+    --accent-700: #3c5d43;
+    --accent-800: #283e2d;
+    --accent-900: #141f16;
+    --accent-950: #0a0f0b;
+
+    --width: min(1200px, 90%);
+    --spacer: 3rem 0;
+    --padding: 2.5rem;
+    --transition: all 0.15s ease;
+    --shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+}

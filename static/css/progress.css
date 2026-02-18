@@ -1,0 +1,17 @@
+#work-in-progress {
+    background-color: var(--text);
+    color: var(--secondary);
+    padding-block: 8rem;
+    align-items: flex-start;
+}
+.work-in-progress-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    font-size: 1.333rem;
+}
+#work-in-progress img {
+    width: 200px;
+}

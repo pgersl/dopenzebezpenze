@@ -1,0 +1,22 @@
+{{define "styles"}}
+    <link rel="stylesheet" href="/css/contact.css">
+{{end}}
+
+{{define "main"}}
+    <section id="title">
+        <div class="title-content">
+            <h1>{{.Title}}</h1>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="contact-content">
+            <img src="/media/base/me.jpg">
+            <div class="contact-details">
+                <strong>Petr Geršl</strong>
+                <a href="mailto:petr.gersl@goldengate.cz">petr.gersl@goldengate.cz</a>
+                <a href="tel:+420731347915">731 347 915</a>
+            </div>
+        </div>
+    </section>
+    {{partial "cta.html" .}}
+{{end}}

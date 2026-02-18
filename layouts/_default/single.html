@@ -1,0 +1,17 @@
+{{define "styles"}}
+    <link rel="stylesheet" href="/css/single.css">
+{{end}}
+
+{{define "main"}}
+    <section id="title" class="coloring-{{.Params.coloring}}">
+        <div class="title-content">
+            <h1>{{.Title}}</h1>
+        </div>
+    </section>
+    <section id="content" class="coloring-{{.Params.coloring}}">
+        <div class="content-body">
+            {{ .Content }}
+        </div>
+    </section>
+    {{partial "cta.html" .}}
+{{end}}

@@ -1,0 +1,74 @@
+{{define "styles"}}
+    <link rel="stylesheet" href="/css/home.css">
+{{end}}
+
+{{define "main"}}
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Finanční gramotnost do nové doby.</h1>
+            <p>...protože státní důchod nemusí stačit.</p>
+        </div>
+        <div class="hero-content">
+            <img src="/media/base/hero.png"s>
+        </div>
+    </section>
+    <section id="what">
+        <div class="what-content">
+            <p>Důchodový systém v České republice je zastaralý a jeho dlouhodobá neudržitelnost se začíná projevovat čím dál zřetelněji. Klesající porodnost a stárnutí populace znamenají, že na jednoho penzistu bude v budoucnu připadat jen jediný pracující – oproti dnešním dvěma. Výsledkem budou výrazně nižší důchody.</p>
+            <a class="secondary-button" href="/blog/problémy-budoucí">Více o problematice &rarr;</a>
+        </div>
+        <div class="what-content">
+            <p>Není ale všem dnům konec. Se správnou strategií se dá na důchod připravit – a možná do něj i odejít dřív, než by nám to dovolil stát. Jen je potřeba o penzi začít přemýšlet mnohem dříve, než to dělali naši rodiče nebo prarodiče. Dnes máme k dispozici nástroje, které oni nikdy neměli.</p>
+            <a class="secondary-button" href="/about/o-projektu">Zajímá mě víc &rarr;</a>
+        </div>
+        <div class="what-content">
+            <p>A právě tyto nástroje se snažíme v rámci projektu <em>Do penze bez penze</em> ukazovat. Vysvětlujeme, proč je důležité začít se svými financemi co nejdříve, a že to nemusí být žádný strašák. Naopak – může to být docela zábava a nakonec i něco, co běží na pozadí bez velké námahy. A přesně to se snažíme učit.</p>
+            <a href="/about/o-mne" class="secondary-button">Více o mně &rarr;</a>
+        </div>
+    </section>
+    <section id="how">
+        <div class="how-content">
+            <h2>Jak to funguje?</h2>
+            <p>Hlavní složkou projektu <em>Do penze bez penze</em> jsou <strong>přednášky pro žáky středních škol</strong>. V rámci přednášky se dozví jak funguje český důchodový systém, co pro něj jeho fungování znamená do budoucna a jaké problémy s jistotou nastanou. Ve druhé části přednášky se naučí, jaká řešení jsou k dispozici a které je nejlepší.</p>
+            <a href="#cta" class="primary-button">Zorganizuj přednášku na své škole &rarr;</a>
+            <p>Kromě přednášek je součástí projektu také <strong>každotýdenní newsletter</strong> pro zájemce o aktuality z trhů nebo prostě pro ty, kteří chtějí zůstat v kontaktu. V newsletteru se věnuji aktuálnímu dění na trhu, které může potenciálním budoucím investorům pomoci v tom, jak se na trhy dívat komplexně, přitom pochopitelně.</p>
+            <a href="#newsletter" class="primary-button">Přihlaš se k newsletteru &rarr;</a>
+            <p>V neposlední řadě je zde na webu dostupný <strong>simulátor investičního portfolia</strong>, ve kterém si můžou žáci zkusit zařadit aktiva do vlastního protfolia přesně podle svých představ a podívat se, jak by se takové portfolio chovalo na opravdovém trhu. Spolu s tím, jsou jednotlivá aktiva blíže popsaná na blogu.</p>
+            <a href="/app" class="primary-button">Sestav si portfolio &rarr;</a>
+        </div>
+        <div class="how-content">
+            <img src="/media/base/wonder.png">
+        </div>
+    </section>
+    <!-- <section id="accomplishments">
+        <div class="accomplishment">
+            <h3>0</h3>
+            <p>přednášek už proběhlo</p>
+        </div>
+        <div class="accomplishment">
+            <h3>0</h3>
+            <p>škol se zapojilo</p>
+        </div>
+        <div class="accomplishment">
+            <h3>0</h3>
+            <p>žáků se účastnilo</p>
+        </div>
+        <div class="accomplishment">
+            <h3>0</h3>
+            <p>odběratelů newsletteru</p>
+        </div>
+    </section> -->
+    <section id="who">
+        <div class="who-content">
+            <img src="/media/base/me.jpg">
+        </div>
+        <div class="who-content">
+            <h2>Petr Geršl</h2>
+            <strong>akreditovaný poradce Golden Gate, organizátor Zvaž vědu!, vedoucí knihovny, tutor, skladatel</strong>
+            <p><em>Do penze bez penze</em> je projekt, který kombinuje mé vášně – <strong>investice a vzdělávání</strong>. Skrze něj se snažím dostávat informace o investování mezi co největší počet mladých lidí, kteří před sebou mají nelehkou budoucnost. To, že před sebou takovou budoucnost mají možná vědí, ale že řešení nemusí být tak bolestivé už mnozí nevědí.</p>
+            <a href="/about/o-mne" class="secondary-button">Více o mně &rarr;</a>
+        </div>
+    </section>
+    {{partial "cta.html" .}}
+    {{partial "newsletter.html" .}}
+{{end}}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/app/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/investi%C4%8Dn%C3%AD-n%C3%A1stroje/</loc>
+  </url><url>
+    <loc>http://localhost:1313/contact/</loc>
+  </url><url>
+    <loc>http://localhost:1313/about/o-projektu/</loc>
+  </url><url>
+    <loc>http://localhost:1313/about/o-mne/</loc>
+  </url><url>
+    <loc>http://localhost:1313/about/prakticke-informace/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/probl%C3%A9my-budouc%C3%AD/</loc>
+  </url><url>
+    <loc>http://localhost:1313/app/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url>
+</urlset>

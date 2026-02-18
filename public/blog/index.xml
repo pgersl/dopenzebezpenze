@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Do penze bez penze</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blog on Do penze bez penze</description>
+    <generator>Hugo</generator>
+    <language>cs</language>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Investiční nástroje</title>
+      <link>http://localhost:1313/blog/investi%C4%8Dn%C3%AD-n%C3%A1stroje/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/investi%C4%8Dn%C3%AD-n%C3%A1stroje/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;Stručný přehled všech běžně dostupných investičních nástrojů&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Obsáhnout veškeré nástroje kapitálového trhu by zřejmě vydalo na celou sérii knih. V tomto článku se dozvíte základní informace a principy fungování jednotlivých běžně dostupných investičních nástrojů, zároveň se pokusíme srovnat je mezi sebou.&lt;/p&gt;&#xA;&lt;p&gt;Poďme si je nejprve všechny vyjmenovat. Existuje asi pět základních typů aktiv, do kterých se dá běžně investovat – nemovitosti, akcie, dluhopisy, komodity a kryptoměny. Lze je rozdělit na tři jednotlivé skupiny – &lt;em&gt;nemovitostní trh&lt;/em&gt;, kam patří nemovitosti a případně jiné produkty s nimi spojené, &lt;em&gt;finanční trh&lt;/em&gt;, kam spadají hlavně akcie a dluhopisy a další produkty, které na nich staví, a konečně &lt;em&gt;alternativní trh&lt;/em&gt;, kam patří komodity, kryptoměny a všechny možné jiné investice.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Problémy budoucí</title>
+      <link>http://localhost:1313/blog/probl%C3%A9my-budouc%C3%AD/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/probl%C3%A9my-budouc%C3%AD/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;Žijeme v turbulentní době, budoucnost ale může být ještě turbulentnější. Pro její řešení ji nejdřív musíme pochopit.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Budoucnost pro velkou část mladých lidí může působit děsivě – bojí se klimatické změny, vzrůstající nejistoty, zbrojení, nejsou si jistí, jak vše zvládnout finančně v inflačním světě, přestávají věřit v neustálý pokrok, do toho všeho častou trpí nějakou formou deprese nebo úzkosti ať už z osobních důvodů nebo právě kvůli obavám z budoucnosti. To všechno jsou zcela validní strachy a věnovat se každému jednomu z nich je nad rámec tohoto příspěvku. Možná by ale stálo za to přeci jen některý z nich vyvrátit – a to strach finanční.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

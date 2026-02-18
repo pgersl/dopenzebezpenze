@@ -1,0 +1,25 @@
+{{define "styles"}}
+    <link rel="stylesheet" href="/css/list.css">
+{{end}}
+
+{{define "main"}}
+    <section id="title" class="coloring-{{.Params.coloring}}">
+        <div class="title-content">
+            <h1>{{.Title}}</h1>
+        </div>
+    </section>
+    <section id="content">
+        <div class="content-body">
+            {{range .Pages}}
+                <a href="{{.RelPermalink}}" class="article article-{{.Params.coloring}}">
+                    <div class="article-text">
+                        <h3>{{.Title}}</h3>
+                        <span>{{.Params.pub}}</span>
+                        <p>{{.Params.show}}</p>
+                    </div>
+                    <img src="/media/blog/{{.Params.img}}">
+                </a>
+            {{end}}
+        </div>
+    </section>
+{{end}}

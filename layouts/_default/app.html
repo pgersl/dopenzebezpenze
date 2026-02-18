@@ -1,0 +1,207 @@
+{{define "styles"}}
+    <link rel="stylesheet" href="/css/app.css">
+{{end}}
+
+{{define "scripts"}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="/js/app.js" defer></script>
+{{end}}
+
+{{define "main"}}
+    <section id="title">
+        <div class="title-content">
+            <h1>{{.Title}}</h1>
+        </div>
+    </section>
+    <section id="investing-calculator">
+        <div class="calculator-content">
+            <div class="calculator-title">
+                <h3>Investiční kalkulačka</h3>
+                <p>Kalkulačka složeného úročení</p>
+            </div>
+            <div class="calculator-grid">
+                <div id="calculator-input">
+                    <label for="calculator-onetime">Jednorázová investice:</label>
+                    <div class="calculator-input-container">
+                        <input id="calculator-onetime" type="text" placeholder="0">
+                        <span>Kč</span>
+                    </div>
+                    <label for="calculator-monthly">Měsíční investice:</label>
+                    <div class="calculator-input-container">
+                        <input id="calculator-monthly" type="text" placeholder="0">
+                        <span>Kč</span>
+                    </div>
+                    <label for="calculator-growth">Průměrná výkonost:</label>
+                    <div class="calculator-input-container">
+                        <input id="calculator-growth" type="text" placeholder="0">
+                        <span>% p.a.</span>
+                    </div>
+                    <label for="calculator-years">
+                        Investiční horizont:
+                        <span id="years-value">0</span> let
+                    </label>
+                    <input
+                        id="calculator-years"
+                        type="range"
+                        min="0"
+                        max="100"
+                        step="1"
+                        value="0"
+                    >
+                    <label for="calculator-inflation">
+                        Průměrná míra inflace:
+                        <span id="inflation-value">0</span> %
+                    </label>
+                    <input
+                        id="calculator-inflation"
+                        type="range"
+                        min="0"
+                        max="5"
+                        step="0.1"
+                        value="0"
+                    >
+                </div>
+                <div id="calculator-output">
+                    <canvas id="investment-chart"></canvas>
+                </div>
+            </div>
+            <div id="calculator-results">
+                <div id="subtotal">
+                    <p>Celkové vklady:</p>
+                    <span id="subtotal-value">0</span>
+                </div>
+                <div id="profit">
+                    <p>Zisk:</p>
+                    <span id="profit-value">0</span>
+                </div>
+                <div id="total">
+                    <p>Celková hodnota:</p>
+                    <span id="total-value">0</span>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Investiční kalkulačka slouží jen jako ukázka matematického výpočtu vlivu složeného úročení na vložené prostředky při dlouhodobém investování v čase. Není v žádném případě zárukou nebo indikací budoucích výnosů.</p>
+            </div>
+        </div>
+    </section>
+    <section id="builder">
+        <div class="builder-content">
+            <div class="builder-title">
+                <h3>Simulátor portfolia</h3>
+                <p>Vytvořte si vlastní diverzifikované portfolio</p>
+            </div>
+            <div class="builder-grid">
+                <div id="instruments-selector">
+                    <strong>Portfolio:</strong>
+                    <div class="instrument-category">
+                        <strong class="category-title" id="stocks-toggle"><i class="fa-solid fa-angle-right"></i>Akcie</strong>
+                        <div class="category-list" id="equity-list">
+                            <div class="category-list-option">
+                                <input class="category-list-option-checkbox" type="checkbox" id="us_stocks" name="us_stocks">
+                                <label for="us_stocks">Americké akcie</label>
+                                <input type="text" id="us_stocks_weight" name="us_stocks_weight" placeholder="0" disabled>
+                                <label for="us_stocks_weight">%</label>
+                            </div>
+                            <div class="category-list-option">
+                                <input class="category-list-option-checkbox" type="checkbox" id="eu_stocks" name="eu_stocks">
+                                <label for="eu_stocks">Evropské akcie</label>
+                                <input type="text" id="eu_stocks_weight" name="eu_stocks_weight" placeholder="0" disabled>
+                                <label for="eu_stocks_weight">%</label>
+                            </div>
+                            <div class="category-list-option">
+                                <input class="category-list-option-checkbox" type="checkbox" id="em_stocks" name="em_stocks">
+                                <label for="em_stocks">Akcie rozvojových trhů</label>
+                                <input type="text" id="em_stocks_weight" name="em_stocks_weight" placeholder="0" disabled>
+                                <label for="em_stocks_weight">%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instrument-category">
+                        <strong class="category-title" id="bonds-toggle"><i class="fa-solid fa-angle-right"></i>Dluhopisy</strong>
+                        <div class="category-list" id="bonds-list">
+                            <div class="category-list-option">
+                                <input class="category-list-option-checkbox" type="checkbox" id="us_bonds" name="us_bonds">
+                                <label for="us_bonds">Americké státní dluhopisy</label>
+                                <input type="text" id="us_bonds_weight" name="us_bonds_weight" placeholder="0" disabled>
+                                <label for="us_bonds_weight">%</label>
+                            </div>
+                            <div class="category-list-option">
+                                <input class="category-list-option-checkbox" type="checkbox" id="corp_bonds" name="corp_bonds">
+                                <label for="corp_bonds">Korporátní dluhopisy</label>
+                                <input type="text" id="corp_bonds_weight" name="corp_bonds_weight" placeholder="0" disabled>
+                                <label for="corp_bonds_weight">%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instrument-category">
+                        <strong class="category-title" id="real-estate-toggle"><i class="fa-solid fa-angle-right"></i>Nemovitosti</strong>
+                        <div class="category-list" id="real-estate-list">
+                            <div class="category-list-option">
+                                <input class="category-list-option-checkbox" type="checkbox" id="real_estate" name="real_estate">
+                                <label for="real_estate">CSI Index</label>
+                                <input type="text" id="real_estate_weight" name="real_estate_weight" placeholder="0" disabled>
+                                <label for="real_estate_weight">%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instrument-category">
+                        <strong class="category-title" id="commodities-toggle"><i class="fa-solid fa-angle-right"></i>Drahé kovy</strong>
+                        <div class="category-list" id="commodities-list">
+                            <div class="category-list-option">
+                                <input class="category-list-option-checkbox" type="checkbox" id="gold" name="gold">
+                                <label for="gold">Zlato</label>
+                                <input type="text" id="gold_weight" name="gold_weight" placeholder="0" disabled>
+                                <label for="gold_weight">%</label>
+                            </div>
+                            <div class="category-list-option">
+                                <input class="category-list-option-checkbox" type="checkbox" id="silver" name="silver">
+                                <label for="silver">Stříbro</label>
+                                <input type="text" id="silver_weight" name="silver_weight" placeholder="0" disabled>
+                                <label for="silver_weight">%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instrument-category">
+                        <strong class="category-title" id="cryptocurrencies-toggle"><i class="fa-solid fa-angle-right"></i>Kryptoměny</strong>
+                        <div class="category-list" id="cryptocurrencies-list">
+                            <div class="category-list-option">
+                                <input class="category-list-option-checkbox" type="checkbox" id="bitcoin" name="bitcoin">
+                                <label for="bitcoin">Bitcoin</label>
+                                <input type="text" id="bitcoin_weight" name="bitcoin_weight" placeholder="0" disabled>
+                                <label for="bitcoin_weight">%</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="pie-chart">
+                    <div id="pie-alert"><i class="fa-solid fa-triangle-exclamation"></i>&nbsp;&nbsp;Součet vah musí být právě 100%</div>
+                    <canvas id="portfolio-chart"></canvas>
+                </div>
+                <div id="portfolio-data">
+                    <table class="portfolio-table">
+                        <strong>Přehled výkonnosti:</strong>
+                        <thead>
+                            <tr>
+                                <th>Časový horizont</th>
+                                <th>Celkový výnos</th>
+                                <th>Průměrný roční výnos</th>
+                            </tr>
+                        </thead>
+                        <tbody id="portfolio-table-body"></tbody>
+                    </table>
+                </div>
+                <div id="diversification-grade">
+                    <strong>Diverzifikační známka:</strong>
+                    <p id="diversification-grade-letter">–</p>
+                    <p id="diversification-label"></p>
+                    <p id="crypto-warning"></p>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p><i class="fa-solid fa-circle-info"></i>&nbsp;&nbsp;Simulátor portfolia má pouze ilustrační účely. Nejedná se v žádném případě o investiční doporučení ani o indikaci nebo záruku budoucích výnosů.</p>
+            </div>
+        </div>
+    </section>
+    {{partial "cta.html" .}}
+    {{ partial "newsletter.html" . }}
+{{end}}

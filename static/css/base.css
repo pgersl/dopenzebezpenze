@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway';
+    font-weight: 400;
+    width: 100%;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+html {
+    font-size: 15px;
+    width: 100%;
+}
+
+/* BASE ELEMENTS */
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Raleway';
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 4.210rem;
+}
+h2 {
+    font-size: 3.158rem;
+}
+h3 {
+    font-size: 2.369rem;
+}
+h4 {
+    font-size: 1.777rem;
+}
+h5 {
+    font-size: 1.333rem;
+}
+small {
+    font-size: 0.750rem;
+}
+
+.primary-button {
+    background-color: var(--primary);
+    color: var(--background);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    font-family: 'Raleway';
+}
+.primary-button:hover {
+    background-color: var(--accent);
+}
+
+.secondary-button {
+    background-color: var(--text);
+    color: var(--background);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    font-family: 'Raleway';
+}
+.secondary-button:hover {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+p a {
+    color: inherit;
+    text-decoration: underline;
+    transition: var(--transition);
+}
+p a:hover {
+    color: var(--primary);
+}
+
+/* NAV */
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: var(--spacer);
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
+.nav-content {
+    width: var(--width);
+    padding: var(--padding);
+    padding-block: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+.nav-logo {
+    text-decoration: none;
+}
+.nav-logo img {
+    height: 50px;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
+.nav-link {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+    transition: var(--transition);
+    text-wrap: nowrap;
+}
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: var(--spacer);
+}
+.footer-content {
+    width: var(--width);
+    padding: var(--padding);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    background-color: var(--text);
+    color: var(--secondary);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.footer-container:first-of-type {
+    min-width: 300px;
+}
+.footer-container img {
+    width: auto;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+.footer-link {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: var(--transition);
+    width: fit-content;
+}
+.footer-link:hover {
+    color: var(--primary);
+}
+.footer-container h5 {
+    margin-bottom: 1rem;
+    margin-top: 1.1rem;
+}
+.footer-container i {
+    font-size: .7rem;
+    margin-right: 0.5rem;
+}
+.subfooter {
+    width: var(--width);
+    padding: var(--padding);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    color: var(--text-300);
+}
+.subfooter a {
+    color: var(--text-300);
+    text-decoration: underline;
+    transition: var(--transition);
+}
+.subfooter a:hover {
+    color: var(--primary);
+}
+
+/* MAIN */
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    width: var(--width);
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 1rem;
+    margin: var(--spacer);
+    box-shadow: var(--shadow);
+}
+
+#cta {
+    --s: 90px;
+    --c1: var(--primary-900);
+    --c2: var(--primary-800);
+
+    background:
+    linear-gradient(135deg,#0000 18.75%,var(--c1) 0 31.25%,#0000 0),
+    repeating-linear-gradient(45deg,var(--c1) -6.25% 6.25%,var(--c2) 0 18.75%);
+    background-size: var(--s) var(--s); 
+
+    color: var(--background);
+    padding-block: 5rem;
+}
+#cta {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+}
+#cta .secondary-button {
+    background-color: var(--secondary);
+    color: var(--text);
+}
+#cta .secondary-button:hover {
+    background-color: var(--primary);
+    color: var(--background);
+}
+#cta .primary-button, #newsletter .primary-button {
+    font-size: 1.333rem;
+    padding: 1rem 1.3rem;
+    border-radius: 15px;
+}
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    width: 50%;
+    font-size: 1.333rem;
+}
+.cta-content div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.cta-content h1 {
+    margin-bottom: 2rem;
+}
+#contact-form {
+    display: block;
+    width: 100%;
+}
+#contact-form input, #newsletter-form input {
+    display: block;
+    font-size: 1.333rem;
+    width: 100%;
+    padding: 1rem .5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    color: var(--text);
+    background-color: var(--background);
+    font-family: 'Raleway';
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+#contact-form input:focus, #newsletter-form input:focus {
+    box-shadow: 0 0 0 3px var(--accent);
+}
+#contact-form input::placeholder, #newsletter-form input::placeholder {
+    color: var(--background-300);
+}
+#newsletter {
+    --s: 90px;
+    --c1: var(--text-900);
+    --c2: var(--text);
+
+    background:
+    linear-gradient(135deg,#0000 18.75%,var(--c1) 0 31.25%,#0000 0),
+    repeating-linear-gradient(45deg,var(--c1) -6.25% 6.25%,var(--c2) 0 18.75%);
+    background-size: var(--s) var(--s); 
+
+    color: var(--background);
+    text-align: center;
+    gap: 2rem;
+    font-size: 1.333rem;
+    padding-block: 5rem;
+}
+#newsletter-form {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+}
+#newsletter-form button {
+    width: fit-content;
+    height: fit-content;
+}
+#newsletter-form input {
+    margin: 0;
+}
+
+.form-message {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.form-message.success {
+    color: var(--accent);
+}
+
+.form-message.error {
+    color: var(--alert);
+}
+
+.hidden {
+    display: none;
+}
+
+button.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+
+@media (max-width:900px) {
+    .nav-content, .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-container {
+        width: min(100%, 400px) !important;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-container:first-of-type {
+        min-width: unset !important;
+    }
+}
+
+@media (max-width:800px) {
+    #cta {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .cta-content {
+        width: 100%;
+        align-items: center;
+    }
+    #newsletter-form {
+        flex-direction: column;
+    }
+    #cta h1, #newsletter h1 {
+        font-size: 2.369rem;
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size: 13px;
+    }
+    h1 {
+        font-size: 3.158rem;
+    }
+    nav img, .footer-container img {
+        height: 30px !important;
+        width: auto;
+    }
+    .nav-content {
+        padding-block: 1rem;
+        font-size: .8rem;
+    }
+    nav .primary-button {
+        font-size: .8rem;
+    }
+}
