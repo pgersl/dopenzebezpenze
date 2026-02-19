@@ -17,6 +17,7 @@
 
 
         <script src="https://kit.fontawesome.com/9ab7bfa7fc.js" crossorigin="anonymous"></script>
+        <script src="/js/forms.js" defer></script>
         
         <title></title>
     </head>
@@ -61,7 +62,11 @@
             <input type="text" name="name" placeholder="Jméno" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="tel" name="tel" placeholder="Telefonní číslo" required>
-            <button type="submit" class="primary-button">Odeslat</button>
+            <button type="submit" class="primary-button">
+                <span class="btn-text">Odeslat</span>
+                <span class="btn-loading hidden">Odesílám...</span>
+            </button>
+            <p class="form-message"></p>
         </form>
     </div>
 </section>
@@ -92,7 +97,7 @@
             </div>
             <div class="subfooter">
                 <p>© 2025 Do penze bez penze.</p>
-                <p>Designed by <a href="https://petrgersl.cz/" target="_blank">Petr Geršl</a></p>
+                <p>Designed by <a href="https://pgersl.xyz/" target="_blank">Petr Geršl</a></p>
             </div>
         </footer>
     </body>

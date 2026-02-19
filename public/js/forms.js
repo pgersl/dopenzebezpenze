@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyufJrbg3ibCLEUixGyVeGp-cg2gos9bXoIBc9QestSQTyt1TBikcNMmEtcOJ6bT5J9nQ/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxi8XFoQmbSbT03epUrcCxQPZf_mnU0sgWPBdtZ6CpDy8Vbz2VJyeAyxLevK6Yms_eJTQ/exec";
 
 // CONTACT FORM
 document.getElementById("contact-form").addEventListener("submit", function(e) {
