@@ -323,6 +323,9 @@ section {
     font-size: 1.333rem;
     padding-block: 5rem;
 }
+#newsletter strong:first-of-type {
+    margin-bottom: -.9rem;
+}
 #newsletter-form {
     display: flex;
     width: 100%;
