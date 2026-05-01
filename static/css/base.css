@@ -127,7 +127,7 @@ nav {
 
     transition: all 0.2s ease;
 }
-.nav-link:hover + .nav-links-dropdown, .nav-links-dropdown:hover {
+.nav-link:hover + .nav-links-dropdown, .nav-links-dropdown:hover, .nav-links-dropdown.toggled {
     opacity: 1;
     transform: translateY(0);
     visibility: visible;
