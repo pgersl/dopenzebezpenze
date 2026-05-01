@@ -17,93 +17,89 @@
 
 
         <script src="https://kit.fontawesome.com/9ab7bfa7fc.js" crossorigin="anonymous"></script>
-        <script src="/js/forms.js" defer></script>
+        <script src="/js/base.js" defer></script>
         
+    <script src="/js/contact.js" defer></script>
+
+
         <title>Kontakt</title>
     </head>
     <body>
-        <nav>
-            <div class="nav-content">
-                <a href="/" class="nav-logo">
-                    <img src="/media/base/main.png">
-                </a>
+        <div class="nav-wrapper">
+            <nav>
+                <a href="/" class="nav-title">Do penze bez penze</a>
                 <div class="nav-links">
-                    <a class="nav-link" href="/about/o-projektu">O projektu</a>
-                    <a class="nav-link" href="/blog">Blog</a>
+                    <a class="nav-link" href="/fundament">Fundament</a>
+                    <a class="nav-link" href="/data">Data</a>
+                    <div class="nav-item">
+                        <span class="nav-link">Spoření</span>
+                        <div class="nav-links-dropdown">
+                            <a class="nav-link" href="/sporeni/jednotlivci">Pro jednotlivce</a>
+                            <a class="nav-link" href="/sporeni/zamestnavatele">Pro zaměstnavatele</a>
+                            <a class="nav-link" href="/sporeni/srovnavac">Srovnávač</a>
+                        </div>
+                    </div>
                     <a class="nav-link" href="/contact">Kontakt</a>
-                    <a class="primary-button" href="/app">Sestav si protfolio!</a>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
         <main>
             
-    <section id="title">
-        <div class="title-content">
-            <h1>Kontakt</h1>
+    <header>
+    <h1>
+        <span class="sup-heading">Kontakt</span>
+        Obraťte se na nás.
+    </h1>
+    <p>Příprava na stáří je téma, které s našimi klienty řešíme každodenně. S jakýmkoliv dotazem nás neváhejte kontaktovat.</p>
+</header>
+    <article>
+        <div class="contact-form">
+            <div class="contact-form-short">
+                <div class="input-group">
+                    <label for="name">Jméno</label>
+                    <input type="text" id="name" name="jmeno" placeholder="Vaše jméno">
+                </div>
+                <div class="input-group">
+                    <label for="surname">Příjmení</label>
+                    <input type="text" id="surname" name="prijmeni" placeholder="Vaše příjmení">
+                </div>
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Váš e-mail">
+                </div>
+                <div class="input-group">
+                    <label for="tel">Tel. č.</label>
+                    <input type="tel" id="tel" name="telefon" placeholder="Váš telefonní číslo">
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="message">Zpráva</label>
+                <textarea id="message" name="zprava" placeholder="Vaše zpráva"></textarea>
+            </div>
+            <button id="submit" type="submit">Odeslat</button>
         </div>
-    </section>
-    <section id="contact">
-        <div class="contact-content">
-            <img src="/media/base/me.jpg">
-            <div class="contact-details">
-                <strong>Petr Geršl</strong>
-                <a href="mailto:petr.gersl@goldengate.cz">petr.gersl@goldengate.cz</a>
-                <a href="tel:+420731347915">731 347 915</a>
+        <div class="contact-info">
+            <div class="contact">
+                <img src="/media/img/contact/petr.jpg">
+                <h3>
+                    Petr Geršl
+                    <span class="sup-heading">Administrátor, poradce</span>
+                </h3>
+                <p>Projekt Do penze bez penze vznikl z přesvědčení, že o důchodovém systému se mluví příliš málo a příliš nepřesně. Cílem je přinést data bez ideologického zabarvení a pomoci lidem udělat informované rozhodnutí.</p>
+                <div class="contact-links">
+                    <a href="mailto:petr.gersl@goldengate.cz" class="contact-link">petr.gersl@goldengate.cz<span>&rarr;</span>
+                    </a>
+                    <a href="tel:+420731347915" class="contact-link">731 347 915<span>&rarr;</span></a>
+                    <a href="https://www.linkedin.com/in/petr-ger%C5%A1l-9324491a6/" class="contact-link">LinkedIn<span>&rarr;</span></a>
+                </div>
             </div>
         </div>
-    </section>
-    <section id="cta">
-    <div class="cta-content">
-        <h1>Spojme síly!</h1>
-        <strong>Zorganizujme přenášku také na vaší škole!</strong>
-        <strong>Zanechte na sebe kontakt a spolu dořešíme detaily</strong>
-        <div>
-            <a href="/about/o-projektu" class="secondary-button">Více o projektu &rarr;</a>
-            <a href="/about/prakticke-informace" class="secondary-button">Praktické informace &rarr;</a>
-        </div>
-    </div>
-    <div class="cta-content">
-        <form id="contact-form">
-            <input type="text" name="name" placeholder="Jméno" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="tel" name="tel" placeholder="Telefonní číslo" required>
-            <button type="submit" class="primary-button">
-                <span class="btn-text">Odeslat</span>
-                <span class="btn-loading hidden">Odesílám...</span>
-            </button>
-            <p class="form-message"></p>
-        </form>
-    </div>
-</section>
+    </article>
 
         </main>
         <footer>
-            <div class="footer-content">
-                <div class="footer-container">
-                    <a href="/">
-                        <img src="/media/base/main-dark.png">
-                    </a>
-                    <p>Bez penze do penze je projekt, jehož cílem je mládež seznamovat s budoucími problémy spojenými s demografickou změnou a předat nutnou finanční gramotnost, kterou mohou využít a tyto problémy řešit.</p>
-                </div>
-                <div class="footer-container">
-                    <h5>Navigace</h5>
-                    <a class="footer-link" href="/about/o-projektu">O projektu</a>
-                    <a class="footer-link" href="/blog">Blog</a>
-                    <a class="footer-link" href="/contact">Kontakt</a>
-                    <a class="footer-link" href="/app">Sestav si portfolio!</a>
-                </div>
-                <div class="footer-container">
-                    <h5>Kontakt</h5>
-                    <p>Petr Geršl</p>
-                    <p><i class="fa-solid fa-phone"></i> <a class="footer-link" href="tel:+420731347915">731 347 915</a></p>
-                    <p><i class="fa-solid fa-envelope"></i> <a class="footer-link" href="mailto:petr.gersl@goldengate.cz">petr.gersl@goldengate.cz</a></p>
-                    <p><i class="fa-solid fa-globe"></i> <a class="footer-link" href="https://petrgersl.cz" target="_blank">petrgersl.cz</a></p>
-                </div>
-            </div>
-            <div class="subfooter">
-                <p>© 2025 Do penze bez penze.</p>
-                <p>Designed by <a href="https://pgersl.xyz/" target="_blank">Petr Geršl</a></p>
-            </div>
+            <p>© 2025 Do penze bez penze.</p>
+            <p>Designed by <a href="https://pgersl.xyz/" target="_blank">Petr Geršl</a></p>
         </footer>
     </body>
 </html>

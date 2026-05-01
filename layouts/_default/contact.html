@@ -2,21 +2,53 @@
     <link rel="stylesheet" href="/css/contact.css">
 {{end}}
 
+{{define "scripts"}}
+    <script src="/js/contact.js" defer></script>
+{{end}}
+
 {{define "main"}}
-    <section id="title">
-        <div class="title-content">
-            <h1>{{.Title}}</h1>
+    {{ partial "header.html" . }}
+    <article>
+        <div class="contact-form">
+            <div class="contact-form-short">
+                <div class="input-group">
+                    <label for="name">Jméno</label>
+                    <input type="text" id="name" name="jmeno" placeholder="Vaše jméno">
+                </div>
+                <div class="input-group">
+                    <label for="surname">Příjmení</label>
+                    <input type="text" id="surname" name="prijmeni" placeholder="Vaše příjmení">
+                </div>
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Váš e-mail">
+                </div>
+                <div class="input-group">
+                    <label for="tel">Tel. č.</label>
+                    <input type="tel" id="tel" name="telefon" placeholder="Váš telefonní číslo">
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="message">Zpráva</label>
+                <textarea id="message" name="zprava" placeholder="Vaše zpráva"></textarea>
+            </div>
+            <button id="submit" type="submit">Odeslat</button>
         </div>
-    </section>
-    <section id="contact">
-        <div class="contact-content">
-            <img src="/media/base/me.jpg">
-            <div class="contact-details">
-                <strong>Petr Geršl</strong>
-                <a href="mailto:petr.gersl@goldengate.cz">petr.gersl@goldengate.cz</a>
-                <a href="tel:+420731347915">731 347 915</a>
+        <div class="contact-info">
+            <div class="contact">
+                <img src="/media/img/contact/petr.jpg">
+                <h3>
+                    Petr Geršl
+                    <span class="sup-heading">Administrátor, poradce</span>
+                </h3>
+                <p>Projekt Do penze bez penze vznikl z přesvědčení, že o důchodovém systému se mluví příliš málo a příliš nepřesně. Cílem je přinést data bez ideologického zabarvení a pomoci lidem udělat informované rozhodnutí.</p>
+                <div class="contact-links">
+                    <a href="mailto:petr.gersl@goldengate.cz" class="contact-link">petr.gersl@goldengate.cz<span>&rarr;</span>
+                    </a>
+                    <a href="tel:+420731347915" class="contact-link">731 347 915<span>&rarr;</span></a>
+                    <a href="https://www.linkedin.com/in/petr-ger%C5%A1l-9324491a6/" class="contact-link">LinkedIn<span>&rarr;</span></a>
+                </div>
             </div>
         </div>
-    </section>
-    {{partial "cta.html" .}}
+    </article>
 {{end}}

@@ -1,0 +1,33 @@
+{{ define "styles" }}
+    <link rel="stylesheet" href="/css/single.css">
+{{ end }}
+
+{{ define "scripts" }}
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+    <script type="module" src="/js/chart-loader.js" defer></script>
+{{ end }}
+
+{{ define "main" }}
+    {{ partial "header.html" . }}
+    <article id="data-article">
+        <div id="dataset">
+            <figure class="chart-figure" data-surface>
+                <div
+                    class="chart-container"
+                    data-chart-src="/datasets/{{ .Params.chartSource }}"
+                    data-chart-type="{{ .Params.chartType | default "line" }}"
+                    data-chart-x="{{ .Params.chartX }}"
+                    data-chart-y="{{ .Params.chartY }}"
+                    data-chart-y-label="{{ .Params.chartYLabel }}"
+                    data-chart-color="{{ .Params.chartColor }}"
+                    data-chart-title="{{ .Params.chartTitle }}"
+                ></div>
+                {{ with .Params.chartCaption }}
+                    <figcaption class="chart-caption">{{ . }}</figcaption>
+                {{ end }}
+            </figure>
+        </div>
+        {{/*  <div id="data-content">{{.Content}}</div>  */}}
+    </article>
+{{ end }}

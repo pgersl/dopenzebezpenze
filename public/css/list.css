@@ -1,66 +1,32 @@
-#title.coloring-green {
-    --s: 140px;
-    --c1: var(--primary-700);
-    --c2: var(--primary-500);
-
-    background:
-    linear-gradient(135deg,#0000 18.75%,var(--c1) 0 31.25%,#0000 0),
-    repeating-linear-gradient(45deg,var(--c1) -6.25% 6.25%,var(--c2) 0 18.75%);
-    background-size: var(--s) var(--s); 
-
-    color: var(--background);
-    padding-block: 3rem;
-}
-#title.coloring-brown {
-    --s: 140px;
-    --c1: var(--text-800);
-    --c2: var(--text-600);
-
-    background:
-    linear-gradient(135deg,#0000 18.75%,var(--c1) 0 31.25%,#0000 0),
-    repeating-linear-gradient(45deg,var(--c1) -6.25% 6.25%,var(--c2) 0 18.75%);
-    background-size: var(--s) var(--s); 
-
-    color: var(--background);
-    padding-block: 3rem;
+article {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-#content {
-    box-shadow: none;
-}
-.content-body {
+.list-card {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    width: min(100%, 680px);
-}
-.article {
+    gap: 1rem;
+    width: 100%;
     text-decoration: none;
     color: var(--text);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
     transition: var(--transition);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    background-color: var(--background-50);
 }
-.article:hover {
+.list-card:hover {
     transform: translateY(-10px);
-    transform: scale(1.05);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.07);
 }
-.article:nth-of-type(2n) {
-    flex-direction: row-reverse;
-}
-.article img {
-    max-width: 200px;
-}
-.article span {
-    display: block;
+.list-card img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
     margin-bottom: 1rem;
 }
-
-@media (max-width:415px) {
-    .article img {
-        display: none;
-    }
+.list-card h4 {
+    margin: 0;
+    color: var(--primary);
 }

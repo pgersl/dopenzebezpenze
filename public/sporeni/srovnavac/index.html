@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/fav/favicon-16x16.png">
+        <link rel="manifest" href="/fav/site.webmanifest">
+
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/base.css">
+        
+    <link rel="stylesheet" href="/css/calculator.css">
+
+
+        <script src="https://kit.fontawesome.com/9ab7bfa7fc.js" crossorigin="anonymous"></script>
+        <script src="/js/base.js" defer></script>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script src="/js/calculator.js" defer></script>
+
+
+        <title>Srovnávač penzijního spoření</title>
+    </head>
+    <body>
+        <div class="nav-wrapper">
+            <nav>
+                <a href="/" class="nav-title">Do penze bez penze</a>
+                <div class="nav-links">
+                    <a class="nav-link" href="/fundament">Fundament</a>
+                    <a class="nav-link" href="/data">Data</a>
+                    <div class="nav-item">
+                        <span class="nav-link">Spoření</span>
+                        <div class="nav-links-dropdown">
+                            <a class="nav-link" href="/sporeni/jednotlivci">Pro jednotlivce</a>
+                            <a class="nav-link" href="/sporeni/zamestnavatele">Pro zaměstnavatele</a>
+                            <a class="nav-link" href="/sporeni/srovnavac">Srovnávač</a>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="/contact">Kontakt</a>
+                </div>
+            </nav>
+        </div>
+        <main>
+            
+    <header>
+    <h1>
+        <span class="sup-heading">Srovnávač penzijního spoření</span>
+        PP, DPS nebo DIP? Co je nejlepší pro Vás?
+    </h1>
+    <p>Zorientovat se ve světě penizjních spoření je náročná disciplína, ale vybrat to nejlepší pro vás je záležitost jednoduchého výpočtu, stačí zadat několik základních parametrů.</p>
+</header>
+    <article>
+        <section class="pension-comparison">
+            <div class="grid-card">
+                <h3>
+                    <span class="sup-heading">PP</span>
+                    Penzijní připojištění
+                </h3>
+                <ul>
+                    <li><i class="fa-solid fa-circle-xmark"></i> Už se neuzavírá</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Státní příspěvek až 340 Kč měsíčně</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Příspěvek zaměstnavatele</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Daňová úleva z částky nad 1700 Kč měsíčně</li>
+                    <li><i class="fa-solid fa-circle-xmark"></i> Zhoršená flexibilita při výběru</li>
+                </ul>
+                <p>Průměrná výnosnost: <strong>1,19 % p.a.</strong></p>
+            </div>
+            <div class="grid-card">
+                <h3>
+                    <span class="sup-heading">DPS</span>
+                    Doplňkové penzijní spoření
+                </h3>
+                <ul>
+                    <li><i class="fa-solid fa-circle-check"></i> 3 a více strategií</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Státní příspěvek až 340 Kč měsíčně</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Příspěvek zaměstnavatele</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Daňová úleva z částky nad 1700 Kč měsíčně</li>
+                    <li><i class="fa-solid fa-circle-xmark"></i> Zhoršená flexibilita při výběru</li>
+                </ul>
+                <p>Průměrná výnosnost: <strong>dle strategie</strong> (až 7,15 % p.a.)</p>
+            </div>
+            <div class="grid-card">
+                <h3>
+                    <span class="sup-heading">DIP</span>
+                    Dlouhodobý investiční produkt
+                </h3>
+                <ul>
+                    <li><i class="fa-solid fa-circle-check"></i> libovolná strategie</li>
+                    <li><i class="fa-solid fa-circle-xmark"></i> Žádný státní příspěvek</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Příspěvek zaměstnavatele</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Daňová úleva z celé měsíční částky</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Skvělá flexibilita při výběru</li>
+                </ul>
+                <p>Průměrná výnosnost: <strong>dle strategie</strong></p>
+            </div>
+        </section>
+        <section class="calculator">
+            <h3>Srovnávač</h3>
+            <div class="calc">
+                <div class="calc-inputs">
+                    <h5>Vstupní parametry</h5>
+                    <div class="calc-input">
+                        <label for="monthly-client">Měsíční úložka (Kč)</label>
+                        <input type="number" id="monthly-client" min="0" value="1144">
+                    </div>
+                    <div class="calc-input">
+                        <label for="monthly-employer">Příspěvek zaměstnavatele (Kč)</label>
+                        <input type="number" id="monthly-employer" min="0" value="1334">
+                    </div>
+                    <div class="calc-input">
+                        <label for="yearly-employer">Roční prémie zaměstnavatele (Kč)</label>
+                        <input type="number" id="yearly-employer" min="0" value="0">
+                    </div>
+                    <div class="calc-input">
+                        <label for="investment-horizon">Investiční horizont (roky)</label>
+                        <input type="number" id="investment-horizon" min="0" value="25">
+                    </div>
+                    <div class="calc-input">
+                        <label for="DIP-yield">Výnosnost DIP (%)</label>
+                        <input type="number" id="DIP-yield" min="0" value="7.90" step="0.10">
+                    </div>
+                    <div class="calc-checkbox">
+                        <input type="checkbox" id="tax-deduction">
+                        <label for="tax-deduction">Reinvestice daňové vratky</label>
+                    </div>
+                    <div class="calc-info">
+                        <p>Pro modelaci uvažujeme tyto výnosnosti:</p>
+                        <ul>
+                            <li>PP TF: <strong>1,19 %</strong> p.a.</li>
+                            <li>DPS PKF: <strong>1,31 %</strong> p.a.</li>
+                            <li>DPS vyvážené fondy: <strong>4,14 %</strong> p.a.</li>
+                            <li>DPS dynamické fondy: <strong>7,15 %</strong> p.a.</li>
+                            <li>DIP: <strong>7,90 %</strong> p.a.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="calc-results">
+                    <div class="calc-result">
+                        <h5>Parametry produktů</h5>
+                        <div class="table-wrapper">
+                            <table id="product-parameters">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>PP</th>
+                                        <th>DPS konzervativní</th>
+                                        <th>DPS vyvážené</th>
+                                        <th>DPS dynamické</th>
+                                        <th>DIP</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="calc-result">
+                        <h5>Vývoj investice v čase</h5>
+                        <div class="chart-container">
+                            <canvas id="growth-chart" role="img" aria-label="Graf vývoje hodnoty investice v čase pro pět strategií">Graf se načítá...</canvas>
+                        </div>
+                        <div class="legend" id="chart-legend"></div>
+                    </div>
+                    <div class="calc-result">
+                        <h5>Výnosy</h5>
+                        <div class="table-wrapper">
+                            <table id="profits">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>PP</th>
+                                        <th>DPS konzervativní</th>
+                                        <th>DPS vyvážené</th>
+                                        <th>DPS dynamické</th>
+                                        <th>DIP</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>Srovnávač slouží jen jako ukázka vlivu složeného úročení na vložené prostředky. Není v žádném případě zárukou nebo indikací budoucích výnosů ani investičním doporučením.</p>
+            </div>
+        </section>
+        <div class="cta">
+    <h2>
+        <span class="sup-heading">Máte otázku?</span>
+        Data jsou jasná.<br>
+        Co to znamená pro <span class="text-primary">vás</span>?
+    </h2>
+    <p>Demografické projekce a výpočty jsou jedno — vaše konkrétní situace je druhé. Pokud chcete probrat, co tato čísla znamenají pro váš důchod, ozvěte se.</p>
+    <a href="/contact" class="primary-button">Napsat zprávu &nbsp; &rarr;</a>
+</div>
+    </article>
+
+        </main>
+        <footer>
+            <p>© 2025 Do penze bez penze.</p>
+            <p>Designed by <a href="https://pgersl.xyz/" target="_blank">Petr Geršl</a></p>
+        </footer>
+    </body>
+</html>

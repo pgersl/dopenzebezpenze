@@ -1,0 +1,85 @@
+<section class="calculator">
+    <h2>
+        <span class="sup-heading">Strategická kalkulačka</span>
+        Jak využít produkty na maximum?
+    </h2>
+    <div id="strategy-calculator">
+        <div class="input">
+            <label for="monthly-client">Měsíční úložka (Kč)</label>
+            <div class="input-group">
+                <input type="number" id="monthly-client" min="0" step="100" value="1500">
+                <span>Kč</span>
+            </div>
+        </div>
+        <div class="grid-box">
+            <div class="strategy-output">
+                <span class="strategy-output-header">Optimální strategie</span>
+                <div class="strategy-output-box" id="strategy-output-0">
+                    <h3>DIP</h3>
+                    <p>Pokud si nepřejte příspívat na DIP vlastní prostředky, využijte benefitu, který vám nabízí zaměstnavatel a nechte si na něj přispívat.</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Nejlepší výnos díky libovolné strategii</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Skvělá flexibilita při výběru*</p>
+                    <span>*Možnost jednorázového výběru vyjma vkladů a výnosů za poslední 3 roky (časový test) zcela bez daňového zatížení.</span>
+                </div>
+                <div class="strategy-output-box" id="strategy-output-dip">
+                    <h3>DIP</h3>
+                    <p><i class="fa-solid fa-circle-check"></i>Nejlepší výnos díky libovolné strategii</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Nejvýhodnější daňová vratka (až 7 200 Kč ročně)</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Možnost využít příspěvek zaměstnavatele</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Skvělá flexibilita při výběru*</p>
+                    <span>*Možnost jednorázového výběru vyjma vkladů a výnosů za poslední 3 roky (časový test) zcela bez daňového zatížení.</span>
+                </div>
+                <div class="strategy-output-box" id="strategy-output-dipFund">
+                    <h3>DIP a Podílový fond</h3>
+                    <p><i class="fa-solid fa-circle-check"></i>Nejlepší výnos díky libovolné strategii DIPu a podílového fondu</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Nejvýhodnější daňová vratka díky DIPu (až 7 200 Kč ročně)</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Možnost využít příspěvek zaměstnavatele na DIP</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Skvělá flexibilita při výběru*</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Smluvní flexibilita podílového fondu (nepodléhá smluvním podmínkám penzijních produktů)</p>
+                    <span>*Možnost jednorázového výběru vyjma vkladů a výnosů z DIPu a fondu za poslední 3 roky (časový test) zcela bez daňového zatížení.</span>
+                </div>
+                <div class="strategy-output-box" id="strategy-output-dipDps">
+                    <h3>DIP a Dynamické DPS</h3>
+                    <p><i class="fa-solid fa-circle-check"></i>Nejlepší výnos díky libovolné strategii DIPu a dynamické strategii DPS (průměrně až 7,15 % p.a.)</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Nejvýhodnější daňová vratka díky DIPu (až 7 200 Kč ročně)</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Státní příspěvek na DPS (až 340 Kč měsíčně)</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Možnost využít příspěvek zaměstnavatele na DIP</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Dobrá flexibilita při výběru (DIP téměr v plné výši i jednorázově*, DPS jako rentu)</p>
+                    <span>*Možnost jednorázového výběru vyjma vkladů a výnosů za poslední 3 roky (časový test) zcela bez daňového zatížení.</span>
+                </div>
+                <div class="strategy-output-box" id="strategy-output-dipDpsFund">
+                    <h3>DIP, Dynamické DPS, Podílový fond</h3>
+                    <p><i class="fa-solid fa-circle-check"></i>Nejlepší výnos díky libovolné strategii DIPu a podílového fondu a dynamické strategii DPS (průměrně až 7,15 % p.a.)</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Nejvýhodnější daňová vratka díky DIPu (až 7 200 Kč ročně)</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Státní příspěvek na DPS (až 340 Kč měsíčně)</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Možnost využít příspěvek zaměstnavatele na DIP</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Dobrá flexibilita při výběru (DIP a podílový fond téměr v plné výši i jednorázově*, DPS jako rentu)</p>
+                    <p><i class="fa-solid fa-circle-check"></i>Smluvní flexibilita podílového fondu (nepodléhá smluvním podmínkám penzijních produktů)</p>
+                    <span>*Možnost jednorázového výběru vyjma vkladů a výnosů za poslední 3 roky (časový test) zcela bez daňového zatížení.</span>
+                </div>
+                <div class="grid-box">
+                    <div class="strategy-output-savings">
+                        <span>Daňová vratka</span>
+                        <span id="tax-savings"></span>
+                        <span>ročně</span>
+                    </div>
+                    <div class="strategy-output-savings">
+                        <span>Státní příspěvek</span>
+                        <span id="state-contribution"></span>
+                        <span>měsíčně</span>
+                    </div>
+                </div>
+            </div>
+            <div class="strategy-output">
+                <span class="strategy-output-header">Rozložení měsíční úložky</span>
+                <div class="chart-wrapper">
+                    <canvas id="strategy-chart"></canvas>
+                </div>
+            </div>
+        </div>
+        <script src="/js/strategy.js" defer></script>
+    </div>
+    <div class="disclaimer">
+        <p>Výsledek této kalkulačky nelze považovat za investiční doporučení. Před jakýmkoliv rozhodnutím se poraďte s profesionálem.</p>
+    </div>
+</section>

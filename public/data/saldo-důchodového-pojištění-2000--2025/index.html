@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/fav/favicon-16x16.png">
+        <link rel="manifest" href="/fav/site.webmanifest">
+
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/base.css">
+        
+    <link rel="stylesheet" href="/css/single.css">
+
+
+        <script src="https://kit.fontawesome.com/9ab7bfa7fc.js" crossorigin="anonymous"></script>
+        <script src="/js/base.js" defer></script>
+        
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+    <script type="module" src="/js/chart-loader.js" defer></script>
+
+
+        <title>Saldo důchodového pojištění 2000 – 2025</title>
+    </head>
+    <body>
+        <div class="nav-wrapper">
+            <nav>
+                <a href="/" class="nav-title">Do penze bez penze</a>
+                <div class="nav-links">
+                    <a class="nav-link" href="/fundament">Fundament</a>
+                    <a class="nav-link" href="/data">Data</a>
+                    <div class="nav-item">
+                        <span class="nav-link">Spoření</span>
+                        <div class="nav-links-dropdown">
+                            <a class="nav-link" href="/sporeni/jednotlivci">Pro jednotlivce</a>
+                            <a class="nav-link" href="/sporeni/zamestnavatele">Pro zaměstnavatele</a>
+                            <a class="nav-link" href="/sporeni/srovnavac">Srovnávač</a>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="/contact">Kontakt</a>
+                </div>
+            </nav>
+        </div>
+        <main>
+            
+    <header>
+    <h1>
+        <span class="sup-heading">Saldo důchodového pojištění 2000 – 2025</span>
+        Důchodový systém je dlouhodobě neudržitelný.
+    </h1>
+    <p>Systém důchodového pojištění v kumulativním dluhu už přes půl bilionu Kč, což představuje zhruba šestinu celého státního dluhu. Reforma je nutná, ale je neuvěřitelně pomalá.</p>
+</header>
+    <article id="data-article">
+        <div id="dataset">
+            <figure class="chart-figure" data-surface>
+                <div
+                    class="chart-container"
+                    data-chart-src="/datasets/saldo-dp-2000.csv"
+                    data-chart-type="bar"
+                    data-chart-x="Rok"
+                    data-chart-y="Saldo"
+                    data-chart-y-label="Saldo DP (mld. Kč)"
+                    data-chart-color=""
+                    data-chart-title="Saldo důchodového pojištění 2000 – 2025"
+                ></div>
+                
+                    <figcaption class="chart-caption">Saldo důchodového pojištění 2000 – 2025, zdroj: MF ČR</figcaption>
+                
+            </figure>
+        </div>
+        
+    </article>
+
+        </main>
+        <footer>
+            <p>© 2025 Do penze bez penze.</p>
+            <p>Designed by <a href="https://pgersl.xyz/" target="_blank">Petr Geršl</a></p>
+        </footer>
+    </body>
+</html>

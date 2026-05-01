@@ -2,16 +2,16 @@
     <link rel="stylesheet" href="/css/single.css">
 {{end}}
 
+{{define "scripts"}}
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+    <script type="module" src="/js/chart-loader.js" defer></script>
+{{end}}
+
 {{define "main"}}
-    <section id="title" class="coloring-{{.Params.coloring}}">
-        <div class="title-content">
-            <h1>{{.Title}}</h1>
-        </div>
-    </section>
-    <section id="content" class="coloring-{{.Params.coloring}}">
-        <div class="content-body">
-            {{ .Content }}
-        </div>
-    </section>
-    {{partial "cta.html" .}}
+    {{ partial "header.html" . }}
+    <article id="{{.Title}}">
+        {{.Content}}
+        {{ partial "cta.html" . }}
+    </article>
 {{end}}

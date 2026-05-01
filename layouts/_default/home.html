@@ -2,73 +2,131 @@
     <link rel="stylesheet" href="/css/home.css">
 {{end}}
 
+{{ define "scripts" }}
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+    <script type="module" src="/js/chart-loader.js" defer></script>
+{{ end }}
+
 {{define "main"}}
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Finanční gramotnost do nové doby.</h1>
-            <p>...protože státní důchod nemusí stačit.</p>
-        </div>
-        <div class="hero-content">
-            <img src="/media/base/hero.png"s>
-        </div>
-    </section>
-    <section id="what">
-        <div class="what-content">
-            <p>Důchodový systém v České republice je zastaralý a jeho dlouhodobá neudržitelnost se začíná projevovat čím dál zřetelněji. Klesající porodnost a stárnutí populace znamenají, že na jednoho penzistu bude v budoucnu připadat jen jediný pracující – oproti dnešním dvěma. Výsledkem budou výrazně nižší důchody.</p>
-            <a class="secondary-button" href="/blog/problémy-budoucí">Více o problematice &rarr;</a>
-        </div>
-        <div class="what-content">
-            <p>Není ale všem dnům konec. Se správnou strategií se dá na důchod připravit – a možná do něj i odejít dřív, než by nám to dovolil stát. Jen je potřeba o penzi začít přemýšlet mnohem dříve, než to dělali naši rodiče nebo prarodiče. Dnes máme k dispozici nástroje, které oni nikdy neměli.</p>
-            <a class="secondary-button" href="/about/o-projektu">Zajímá mě víc &rarr;</a>
-        </div>
-        <div class="what-content">
-            <p>A právě tyto nástroje se snažíme v rámci projektu <em>Do penze bez penze</em> ukazovat. Vysvětlujeme, proč je důležité začít se svými financemi co nejdříve, a že to nemusí být žádný strašák. Naopak – může to být docela zábava a nakonec i něco, co běží na pozadí bez velké námahy. A přesně to se snažíme učit.</p>
-            <a href="/about/o-mne" class="secondary-button">Více o mně &rarr;</a>
-        </div>
-    </section>
-    <section id="how">
-        <div class="how-content">
-            <h2>Jak to funguje?</h2>
-            <p>Hlavní složkou projektu <em>Do penze bez penze</em> jsou <strong>přednášky pro žáky středních škol</strong>. V rámci přednášky se dozví jak funguje český důchodový systém, co pro něj jeho fungování znamená do budoucna a jaké problémy s jistotou nastanou. Ve druhé části přednášky se naučí, jaká řešení jsou k dispozici a které je nejlepší.</p>
-            <a href="#cta" class="primary-button">Zorganizuj přednášku na své škole &rarr;</a>
-            <p>Kromě přednášek je součástí projektu také <strong>každotýdenní newsletter</strong> pro zájemce o aktuality z trhů nebo prostě pro ty, kteří chtějí zůstat v kontaktu. V newsletteru se věnuji aktuálnímu dění na trhu, které může potenciálním budoucím investorům pomoci v tom, jak se na trhy dívat komplexně, přitom pochopitelně.</p>
-            <a href="#newsletter" class="secondary-button">Přihlaš se k newsletteru &rarr;</a>
-            <p>V neposlední řadě je zde na webu dostupný <strong>simulátor investičního portfolia</strong>, ve kterém si můžou žáci zkusit zařadit aktiva do vlastního protfolia přesně podle svých představ a podívat se, jak by se takové portfolio chovalo na opravdovém trhu. Spolu s tím, jsou jednotlivá aktiva blíže popsaná na blogu.</p>
-            <a href="/app" class="secondary-button">Sestav si portfolio &rarr;</a>
-        </div>
-        <div class="how-content">
-            <img src="/media/base/wonder.png">
-        </div>
-    </section>
-    <!-- <section id="accomplishments">
-        <div class="accomplishment">
-            <h3>0</h3>
-            <p>přednášek už proběhlo</p>
-        </div>
-        <div class="accomplishment">
-            <h3>0</h3>
-            <p>škol se zapojilo</p>
-        </div>
-        <div class="accomplishment">
-            <h3>0</h3>
-            <p>žáků se účastnilo</p>
-        </div>
-        <div class="accomplishment">
-            <h3>0</h3>
-            <p>odběratelů newsletteru</p>
-        </div>
-    </section> -->
-    <section id="who">
-        <div class="who-content">
-            <img src="/media/base/me.jpg">
-        </div>
-        <div class="who-content">
-            <h2>Petr Geršl</h2>
-            <strong>akreditovaný poradce Golden Gate, organizátor Zvaž vědu!, vedoucí knihovny, tutor, skladatel</strong>
-            <p><em>Do penze bez penze</em> je projekt, který kombinuje mé vášně – <strong>investice a vzdělávání</strong>. Skrze něj se snažím dostávat informace o investování mezi co největší počet mladých lidí, kteří před sebou mají nelehkou budoucnost. To, že před sebou takovou budoucnost mají možná vědí, ale že řešení nemusí být tak bolestivé už mnozí nevědí.</p>
-            <a href="/about/o-mne" class="secondary-button">Více o mně &rarr;</a>
-        </div>
-    </section>
-    {{partial "cta.html" .}}
-    {{partial "newsletter.html" .}}
+    <header>
+        <h1>
+            <span class="sup-heading">Do penze bez penze</span>
+            Na důchod se musíme <span class="text-primary"> připravit sami</span>.
+        </h1>
+        <p>
+            Česká republika, podobně jako ostatní země, prochází demografickou změnou a její populace stárne. To má dopad mimo jiné hlavně na schopnost státního důchodového systému dostát svým závazkům při zachování rozpočtové odpovědnosti.
+            <a href="/fundament" class="primary-button">Fundament &nbsp; &rarr;</a>
+        </p>
+    </header>
+    <article>
+        <section id="main-stats">
+            <div class="stat">
+                <span>
+                    1,28
+                    <span class="text-primary"> dítěte</span>
+                </span>
+                <p>Aktuální porodnost ČR – hluboko pod hranicí udžitelnosti 2,1</p>
+            </div>
+            <div class="stat">
+                <span>
+                    – 0,5
+                    <span class="text-primary"> bil. Kč</span>
+                </span>
+                <p>Kumulované saldo důchodového pojištění po roce 2025 – a dále klesá</p>
+            </div>
+            <div class="stat">
+                <span>
+                    – 3,4
+                    <span class="text-primary"> % HDP</span>
+                </span>
+                <p>Odhadované saldo důchodového pojištění v roce 2075 – dnes je to - 0,1 %</p>
+            </div>
+        </section>
+        <section id="main-qs">
+            <h2>
+                <span class="sup-heading">Tři teze</span>
+                Proč je situace vážná a co s tím můžeme dělat?
+            </h2>
+            <div class="grid-box">
+                <div class="text-box">
+                    <span class="numeralia">01</span>
+                    <h3>Populace stárne.</h3>
+                    <p>Kombinace klesající porodnosti a rostoucí délky dožití zásadně mění věkovou strukturu populace ČR. V roce 2100 by až třetinu mohli tvožit lidé starší 65 let.</p>
+                    <a href="/data" class="primary-button">Demografická data &nbsp; &rarr;</a>
+                </div>
+                <div class="text-box">
+                    <span class="numeralia">02</span>
+                    <h3>Na důchody nebude.</h3>
+                    <p>Kumulované saldo důchodového pojištění je po roce 2025 bylo v záporu více než půl bilionu korun. Jakákoliv reforma tento problém nevyřeší, jen ho oddálí.</p>
+                    <a href="/fundament" class="primary-button">Analýza &nbsp; &rarr;</a>
+                </div>
+                <div class="text-box">
+                    <span class="numeralia">03</span>
+                    <h3>Reforma nestačí.</h3>
+                    <p>Odpovědnost za zajištění na stáří se přesouvá na jednotlivce. Moderní spořicí produkty — zejména DIP — nabízejí reálnou alternativu ke spoléhání na stát.</p>
+                    <a href="/sporeni/jednotlivci" class="primary-button">Jak spořit &nbsp; &rarr;</a>
+                </div>
+            </div>
+        </section>
+        <section id="main-idea">
+            <h2>
+                <div class="sup-heading">Výhled do budoucna</div>
+                2075
+            </h2>
+            <em>Horizont projekce NRR</em>
+            <div class="grid-content">
+                <p>
+                    Relativní saldo důchodového pojištění se bude do budoucna dále snižovat. Národní rozpočtová rada navrhuje reformu, která nebude příjemná — ale možná dokáže oddálit problém, který důchodový systém postihuje už teď.
+                    <br><br>
+                    Ani ta nejoptimističtější varianta reformy, ale nepřevede saldo do kladných čísel. Pouze zpomalí propad.
+                    <br><br>
+                    <a href="/data" class="primary-button">Všechna data &nbsp; &rarr;</a>
+                </p>
+                <figure class="chart-figure" data-surface>
+                    <div
+                        class="chart-container"
+                        data-chart-src="/datasets/saldo-dp-hdp.csv"
+                        data-chart-type="line"
+                        data-chart-x="Rok"
+                        data-chart-y="Pravidla do roku 2023, Důchodový věk zastropovaný na 65 letech, Vyšší důchodový věk, Reforma NRR, Reálná data"
+                        data-chart-y-label="Saldo DP (% HDP)"
+                    ></div>
+                    <figcaption class="chart-caption">Relativní saldo důchodového pojištění 2000 – 2075, zdroj: NRR ČR, vlastní výpočet</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section id="bento">
+            <div class="bento-item">
+                <h3>
+                    <span class="sup-heading">Pro jednotlivce</span>
+                    Na spoření na důchod nejste sami.
+                </h3>
+                <p>Dnes máme kromě vlastních prostředků při přípravě na důchod ještě celou řadu spořících produktů, které nám umožňují z aktivní přípravy na stáří těžit ještě mnohem více. Vyyužívate je ale na maximum?</p>
+                <a href="/sporeni/jednotlivci" class="primary-button">Spoření pro jednotlivce &nbsp; &rarr;</a>
+            </div>
+            <div class="bento-item">
+                <h3>
+                    <span class="sup-heading">Pro zaměstnavatele</span>
+                    Díky příspěvkům pro zaměstnance můžete ušetřit.
+                </h3>
+                <p>V dnešním konkurenčním prostředí představují zaměstnanecké benefity klíčový nástroj pro udržení a motivaci talentů. Mezi nejefektivnější patří příspěvky na penzijní spoření (DPS, starší PP nebo nejnovější DIP).</p>
+                <a href="/sporeni/zamestnavatele" class="primary-button">Spoření pro zaměstnavatele &nbsp; &rarr;</a>
+            </div>
+            <div class="bento-item">
+                <div class="bento-text-content">
+                    <h3>
+                        <span class="sup-heading">Srovnávač</span>
+                        PP, DPS nebo DIP? Co je nejlepší pro Vás?
+                    </h3>
+                    <p>Zorientovat se ve světě penizjních spoření je náročná disciplína, ale vybrat to  nejlepší pro vás je záležitost jednoduchého výpočtu, stačí znát několik základních   parametrů.</p>
+                    <a href="/sporeni/srovnavac" class="primary-button">Srovnávač &nbsp; &rarr;</a>
+                </div>
+                <div class="bento-img">
+                    <img src="/media/img/home/image.png">
+                </div>
+            </div>
+        </section>
+        {{partial "cta.html" .}}
+    </article>
 {{end}}

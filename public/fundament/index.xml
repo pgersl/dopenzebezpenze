@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fundaments on Do penze bez penze</title>
+    <link>http://localhost:1313/fundament/</link>
+    <description>Recent content in Fundaments on Do penze bez penze</description>
+    <generator>Hugo</generator>
+    <language>cs</language>
+    <atom:link href="http://localhost:1313/fundament/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fundament</title>
+      <link>http://localhost:1313/fundament/fundament/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fundament/fundament/</guid>
+      <description>&lt;h2 id=&#34;populace-stárne&#34;&gt;Populace stárne.&lt;/h2&gt;&#xA;&lt;p&gt;Česká republika prochází už od půlky minulého století zásadní demografickou změnou. Porodnost je od 50. let (s výjimkou 70. let) pod hranicí udržitelnost (tj. méně než 2,1). Důvodů pro tento pokles je jistě nespočet, ale ty nejsou předmětem této úvahy. Důležité je, že to má zásadní vliv na věkovou strukturu populace. Rodí-li se totiž méně dětí, znamená to, že poměrně je v populaci více starších lidí. Aktuální porodnost se pohybuje dokonce pod 1,5.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

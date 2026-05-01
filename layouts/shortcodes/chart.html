@@ -1,0 +1,15 @@
+<figure class="chart-figure" data-surface>
+    <div
+        class="chart-container"
+        data-chart-src="/datasets/{{ .Get "chartSource" }}"
+        data-chart-type="{{ .Get "chartType" | default "line" }}"
+        data-chart-x="{{ .Get "chartX" }}"
+        data-chart-y="{{ .Get "chartY" }}"
+        data-chart-y-label="{{ .Get "chartYLabel" }}"
+        data-chart-color="{{ .Get "chartColor" }}"
+        data-chart-title="{{ .Get "chartTitle" }}"
+    ></div>
+    {{ with .Get "chartCaption" }}
+        <figcaption class="chart-caption">{{ . }}</figcaption>
+    {{ end }}
+</figure>

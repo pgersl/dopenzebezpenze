@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/fav/favicon-16x16.png">
+        <link rel="manifest" href="/fav/site.webmanifest">
+
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/base.css">
+        
+    <link rel="stylesheet" href="/css/single.css">
+
+
+        <script src="https://kit.fontawesome.com/9ab7bfa7fc.js" crossorigin="anonymous"></script>
+        <script src="/js/base.js" defer></script>
+        
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+    <script type="module" src="/js/chart-loader.js" defer></script>
+
+
+        <title>Penzijní spoření jako zaměstnanecký benefit</title>
+    </head>
+    <body>
+        <div class="nav-wrapper">
+            <nav>
+                <a href="/" class="nav-title">Do penze bez penze</a>
+                <div class="nav-links">
+                    <a class="nav-link" href="/fundament">Fundament</a>
+                    <a class="nav-link" href="/data">Data</a>
+                    <div class="nav-item">
+                        <span class="nav-link">Spoření</span>
+                        <div class="nav-links-dropdown">
+                            <a class="nav-link" href="/sporeni/jednotlivci">Pro jednotlivce</a>
+                            <a class="nav-link" href="/sporeni/zamestnavatele">Pro zaměstnavatele</a>
+                            <a class="nav-link" href="/sporeni/srovnavac">Srovnávač</a>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="/contact">Kontakt</a>
+                </div>
+            </nav>
+        </div>
+        <main>
+            
+    <header>
+    <h1>
+        <span class="sup-heading">Penzijní spoření jako zaměstnanecký benefit</span>
+        Díky příspěvkům pro zaměstnance si nejen lépe udržíte talentované pracovníky, ale zároveň ušetříte.
+    </h1>
+    <p>V dnešním konkurenčním prostředí představují zaměstnanecké benefity klíčový nástroj pro udržení a motivaci talentů. Mezi nejefektivnější patří příspěvky na penzijní spoření (doplňkové penzijní spoření – DPS, starší penzijní připojištění nebo nejnovější DIP – dlouhodobý investiční produkt).</p>
+</header>
+    <article id="Penzijní spoření jako zaměstnanecký benefit">
+        <div class="grid-box" style="margin-bottom:4rem;">
+<div class="text-box">
+<span class="numeralia">01</span>
+<h4 id="do-jakých-produktů-můžu-jako-zaměstnavatel-přispívat">Do jakých produktů můžu jako zaměstnavatel přispívat?</h4>
+<p>Zaměstnavatelé mohou v rámci svých balíčků benefitů přispívat až 50 000 Kč ročně celkem do <strong>životního pojištění</strong> a <strong>penzijních produktů</strong>. Průměrné příspěvky do těchto produktů se u penzijních produktů pohybují mezi 1 000 – 1 500 Kč měsíčně, u životního pojištění pak jen v řádu stovek.</p>
+</div>
+<div class="text-box">
+<span class="numeralia">02</span>
+<h4 id="proč-je-dobré-přispívat-zaměstnanci-na-penzijní-spoření">Proč je dobré přispívat zaměstnanci na penzijní spoření?</h4>
+<p>Jakýkoliv příspěvek od zaměstnavatele je zaměstnancem vnímán pozitivně. Narozdíl od životního pojištění (kde přijdou zápisem na pojistné události) je to ale <strong>viditelná hodnota</strong>, kterou může zaměstnanec po splnění podmínek čerpat.</p>
+</div>
+<div class="text-box">
+<span class="numeralia">03</span>
+<h4 id="jak-lze-příspěvky-nastavit">Jak lze příspěvky nastavit?</h4>
+<p>Nejčastějši forma je <strong>fixní měsíční příspěvek</strong> (případně roční). Příspěvek ale může sloužit také jako motivátor a jeho výše být úměrná <strong>výkonu zaměstnance</strong> a sloužit tak jako určitá forma <strong>prémie</strong>.</p>
+</div>
+</div>
+<section class="calculator">
+    <h2>
+        <span class="sup-heading">Příspěvek nebo zvýšení mzdy</span>
+        Kolik je možné na příspěvcích ušetřit?
+    </h2>
+    <div id="calculator">
+        <div class="col">
+            <div class="input">
+                <label for="employer-monthly">Částka (Kč)</label>
+                <input type="number" id="employer-monthly" min="0" max="4166" step="100" value="3000">
+            </div>
+            <div class="input">
+                <label for="employer-employees">Počet zaměstnanců</label>
+                <input type="number" id="employer-employees" min="0" value="10">
+            </div>
+            <div class="savings">
+                <label>Měsíční úspora</label>
+                <span id="savings"></span>
+                <span class="savings-info">Snížení nákladů o sociální a zdravotní pojištění</span>
+            </div>
+        </div>
+        <div class="col">
+            <canvas id="chart"></canvas>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+        <script src="/js/employers.js" defer></script>
+    </div>
+</section>
+<section class="pension-comparison">
+    <h2>
+        <span class="sup-heading">Přehled</span>
+        Srovnání penzijního produktů
+    </h2>
+    <div class="grid-box">
+        <div class="pension-box">
+            <h3>
+                <span class="sup-heading">PP</span>
+                Penzijní připojištění
+            </h3>
+            <div class="pension-info-box">
+                <p class="negative"><i class="fa-solid fa-circle-xmark"></i> <strong>Už se neuzavírá</strong></p>
+                <p class="pension-spec">Penziní připojištění jako produkt už neexistuje od roku 2013, kdy bylo nahrazeno doplňkovým penzijním spořením. Prostředky klientů přešli do tzv. transformovaných fondů (TF), které fungují úplně stejně.</p>
+                <p class="positive"><i class="fa-solid fa-circle-check"></i> <strong>Státní příspěvek až 340 Kč měsíčně</strong></p>
+                <p class="pension-spec">Státní příspěvek se počítá jako 20 % z jakékkoliv měsíční úložky klienta nad 500 Kč, maximální hodnota je 340 Kč (při měsíční úložce 1 700 Kč).</p>
+                <p class="positive"><i class="fa-solid fa-circle-check"></i> <strong>Příspěvek zaměstnavatele</strong></p>
+                <p class="pension-spec">Průměrný měsíční příspěvěk do penzijního připojištění v roce 2025 činil 1 225 Kč.</p>
+                <p class="positive"><i class="fa-solid fa-circle-check"></i> <strong>Daňová úleva z částky nad 1700 Kč</strong></p>
+                <p class="pension-spec">O veškeré měsíční úložky nad 1 700 Kč měsíčně si lze ponížit základ daně a získat daňovou vratku až 7 200 Kč. Pro získání této vratky je potřeba investovat 5 700 Kč měsíčně.</p>
+                <p class="negative"><i class="fa-solid fa-circle-xmark"></i> <strong>Zhoršená flexibilita při výběru</strong></p>
+                <p class="pension-spec">Bez daňové zátěže lze vybírat pouze jako desetiletou rentu.</p>
+            </div>
+            <div class="pension-info-box">
+                <strong>Průměrný výnos (p.a.)</strong>
+                <h4>1,19 %</h4>
+            </div>
+            <div class="pension-info-box">
+                <strong>Smluvní podmínky:</strong>
+                <ul>
+                    <li>výplata možná nejdříve v <strong>60 letech</strong></li>
+                    <li>smlouva uzavřená alespoň na <strong>10 let</strong></li>
+                    <li>při předčasném ukončení (alespoň 2 roky po uzavření) dochází ke:
+                        <ul>
+                            <li>ztrátě nároku na státní příspěvky,</li>
+                            <li>dodatečnému zdanění příspěvků zaměstnavatele (15 %),</li>
+                            <li>zdanění výnosů (15 %),</li>
+                            <li>zpětnému zdanění daňových úlev (15 %).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pension-box">
+            <h3>
+                <span class="sup-heading">DPS</span>
+                Doplňkové penzijní spoření
+            </h3>
+            <div class="pension-info-box">
+                <p class="positive"><i class="fa-solid fa-circle-check"></i> <strong>3 a více strategií</strong></p>
+                <p class="pension-spec">Při sjednávání DPS si lze vybrat ze 3 povinných strategií (konzervativní, vyvážená, dynamická). Konzervativní strategie (PKF) se podobají staršímu penzijnímu připojištění, vyvážené cílí na bezpečí a dynamické se snaží o nejvyšší možný výnos vyměnou za vyšší rizikovost.</p>
+                <p class="positive"><i class="fa-solid fa-circle-check"></i> <strong>Státní příspěvek až 340 Kč měsíčně</strong></p>
+                <p class="pension-spec">Stejné podmínky jako u PP. – 20 % z úložky nad 500 Kč, maximálně 340 Kč.</p>
+                <p class="positive"><i class="fa-solid fa-circle-check"></i> <strong>Příspěvek zaměstnavatele</strong></p>
+                <p class="pension-spec">Průměrný měsíční příspěvěk do DPS v roce 2025 činil 1 334 Kč.</p>
+                <p class="positive"><i class="fa-solid fa-circle-check"></i> <strong>Daňová úleva z částky nad 1700 Kč</strong></p>
+                <p class="pension-spec">Stejně jako u PP – lze získat daňovou vratku až 7 200 Kč. Pro získání této vratky je potřeba investovat 5 700 Kč měsíčně.</p>
+                <p class="negative"><i class="fa-solid fa-circle-xmark"></i> <strong>Zhoršená flexibilita při výběru</strong></p>
+                <p class="pension-spec">Bez daňové zátěže lze vybírat pouze jako desetiletou rentu.</p>
+            </div>
+            <div class="pension-info-box">
+                <strong>Průměrný výnos (p.a.)</strong>
+                <h4>1,31 % &nbsp;|&nbsp; 4,14 % &nbsp;|&nbsp; 7,15 %</h4>
+            </div>
+            <div class="pension-info-box">
+                <strong>Smluvní podmínky:</strong>
+                <ul>
+                    <li>výplata možná nejdříve v <strong>60 letech</strong></li>
+                    <li>smlouva uzavřená alespoň na <strong>10 let</strong></li>
+                    <li>při předčasném ukončení (alespoň 2 roky po uzavření) dochází ke:
+                        <ul>
+                            <li>ztrátě nároku na státní příspěvky,</li>
+                            <li>dodatečnému zdanění příspěvků zaměstnavatele (15 %),</li>
+                            <li>zdanění výnosů (15 %),</li>
+                            <li>zpětnému zdanění daňových úlev (15 %).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pension-box">
+            <h3>
+                <span class="sup-heading">DIP</span>
+                Dlouhodobý investiční produkt
+            </h3>
+            <div class="pension-info-box">
+                <p class="positive"><i class="fa-solid fa-circle-check"></i> <strong>Libovolná strategie</strong></p>
+                <p class="pension-spec">U DIPu je možné si vybrat jakoukoliv strategii, přesně na míru ušitou každému klientovi.</p>
+                <p class="negative"><i class="fa-solid fa-circle-xmark"></i> <strong>Žádný státní příspěvek</strong></p>
+                <p class="pension-spec">Stát na DIP nepřispívá. Namísto volí jiný základ pro výpočet daňové úlevy a klient tak díky tomu nemusí vkládat tak vysoké částky jako na PP nebo DPS.</p>
+                <p class="positive"><i class="fa-solid fa-circle-check"></i> <strong>Příspěvek zaměstnavatele</strong></p>
+                <p class="pension-spec">Zaměstnavatelé mohou na DIP přispívat stejně snadno jako na DPS.</p>
+                <p class="positive"><i class="fa-solid fa-circle-check"></i> <strong>Daňová úleva z celé měsíční úložky</strong></p>
+                <p class="pension-spec">O veškeré měsíční úložky si lze ponížit základ daně a získat daňovou vratku až 7 200 Kč. Pro získání této vratky je potřeba investovat jen 4 000 Kč měsíčně.</p>
+                <p class="positive"><i class="fa-solid fa-circle-check"></i> <strong>Skvělá flexibilita při výběru</strong></p>
+                <p class="pension-spec">U DIPu lze vybrat peníze jednorázově nebo jakýmkoliv způsobem si klient přeje. Výnosy podléhají daňové zátěži jen vlivem časového testu, jako jakákoliv jiná investice.</p>
+            </div>
+            <div class="pension-info-box">
+                <strong>Průměrný výnos</strong>
+                <h4>dle strategie</h4>
+            </div>
+            <div class="pension-info-box">
+                <strong>Smluvní podmínky:</strong>
+                <ul>
+                    <li>výplata možná nejdříve v <strong>60 letech</strong></li>
+                    <li>smlouva uzavřená alespoň na <strong>10 let</strong></li>
+                    <li>při předčasném ukončení (alespoň 2 roky po uzavření) dochází ke:
+                        <ul>
+                            <li>ztrátě nároku na státní příspěvky,</li>
+                            <li>dodatečnému zdanění příspěvků zaměstnavatele (15 %),</li>
+                            <li>zdanění výnosů, které <strong>neprošli časovým testem 3 let</strong> (15 %),</li>
+                            <li>zpětnému zdanění daňových úlev (15 %).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a href="/sporeni/srovnavac" class="primary-button">Srovnávač &nbsp;&nbsp; &rarr;</a>
+</section>
+
+
+        <div class="cta">
+    <h2>
+        <span class="sup-heading">Máte otázku?</span>
+        Data jsou jasná.<br>
+        Co to znamená pro <span class="text-primary">vás</span>?
+    </h2>
+    <p>Demografické projekce a výpočty jsou jedno — vaše konkrétní situace je druhé. Pokud chcete probrat, co tato čísla znamenají pro váš důchod, ozvěte se.</p>
+    <a href="/contact" class="primary-button">Napsat zprávu &nbsp; &rarr;</a>
+</div>
+    </article>
+
+        </main>
+        <footer>
+            <p>© 2025 Do penze bez penze.</p>
+            <p>Designed by <a href="https://pgersl.xyz/" target="_blank">Petr Geršl</a></p>
+        </footer>
+    </body>
+</html>
