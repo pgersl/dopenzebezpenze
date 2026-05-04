@@ -1,0 +1,386 @@
+{{define "styles"}}
+    <link rel="stylesheet" href="/css/presentation.css">
+{{end}}
+
+{{define "scripts"}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <script src="/js/presentation.js" defer></script>
+{{end}}
+
+{{define "main"}}
+
+<!-- Progress bar -->
+<div class="prez-progress" id="prez-progress"></div>
+
+<!-- Slide navigation dots -->
+<nav class="prez-nav" id="prez-nav" aria-label="Navigace prezentací">
+    <button class="prez-dot active" data-slide="0" aria-label="Snímek 1"></button>
+    <button class="prez-dot" data-slide="1" aria-label="Snímek 2"></button>
+    <button class="prez-dot" data-slide="2" aria-label="Snímek 3"></button>
+    <button class="prez-dot" data-slide="3" aria-label="Snímek 4"></button>
+    <button class="prez-dot" data-slide="4" aria-label="Snímek 5"></button>
+    <button class="prez-dot" data-slide="5" aria-label="Snímek 6"></button>
+    <button class="prez-dot" data-slide="6" aria-label="Snímek 7"></button>
+    <button class="prez-dot" data-slide="7" aria-label="Snímek 8"></button>
+</nav>
+
+<!-- Slide counter -->
+<div class="prez-counter" id="prez-counter">
+    <span id="prez-current">01</span>
+    <span class="prez-sep">/</span>
+    <span>08</span>
+</div>
+
+<!-- Keyboard hint -->
+<div class="prez-hint" id="prez-hint">
+    <span>Navigujte šipkami ↑ ↓ nebo scrollem</span>
+</div>
+
+<div class="prez-container" id="prez-container">
+
+    <!-- ═══════════════════════════════════════════════════
+         SLIDE 1 — HERO
+    ═══════════════════════════════════════════════════ -->
+    <section class="prez-slide slide-hero" id="slide-0" data-slide="0">
+        <div class="slide-inner">
+            <h1 class="hero-title">
+                Proč DIP patří do<br>
+                benefitního balíčku<br>
+                <em>každé firmy</em>
+            </h1>
+            <div class="hero-eyebrow">
+                <span class="hero-tag">Benefity</span>
+                <span class="hero-tag">Pro zaměstnavatele</span>
+            </div>
+            
+            <p class="hero-sub">
+                Dlouhodobý investiční produkt je nejmodernější nástroj pro přípravu zaměstnanců na důchod — a zároveň jeden z nejefektivnějších benefitů z pohledu daňové optimalizace.
+            </p>
+            <div class="hero-cta">
+                <button class="btn-next" onclick="document.querySelector('#slide-1').scrollIntoView({behavior:'smooth'})">
+                    Začít prezentaci
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SLIDE 2 — PROBLÉM
+    ═══════════════════════════════════════════════════ -->
+    <section class="prez-slide slide-dark" id="slide-1" data-slide="1">
+        <div class="slide-inner slide-inner--centered">
+            <div class="slide-label">Kontext</div>
+            <h2 class="slide-title">Státní důchod<br><em>nestačí</em></h2>
+            <p class="slide-body">
+                Český důchodový systém je průběžně financovaný — a demografická situace ho dostává pod stále větší tlak. Vaši zaměstnanci spoléhají na systém, který možná nebude fungovat tak, jak očekávají.
+            </p>
+            <div class="stat-grid">
+                <div class="stat-block">
+                    <span class="stat-num">1,28</span>
+                    <span class="stat-desc">dítěte na ženu — hluboko pod hranicí udržitelnosti 2,1</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-num">−0,5 bil.</span>
+                    <span class="stat-desc">Kč kumulované saldo důchodového pojištění po roce 2025</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-num">−3,4 %</span>
+                    <span class="stat-desc">HDP — odhadované saldo důchodového pojištění v roce 2075</span>
+                </div>
+            </div>
+            <p class="slide-footnote">
+                Reforma oddálí problém, nevyřeší ho. Odpovědnost za finanční zabezpečení na stáří se přesouvá na jednotlivce — a na zaměstnavatele, kteří jim chtějí pomoci.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SLIDE 3 — CO JE DIP
+    ═══════════════════════════════════════════════════ -->
+    <section class="prez-slide slide-light" id="slide-2" data-slide="2">
+        <div class="slide-inner slide-inner--split">
+            <div class="split-left">
+                <div class="slide-label">Produkt</div>
+                <h2 class="slide-title">Co je<br><em>DIP?</em></h2>
+                <p class="slide-body">
+                    Dlouhodobý investiční produkt je nástupce penzijního spoření — modernější, flexibilnější a výnosnější. Zaměstnanci mohou investovat do libovolné strategie a díky daňovým úlevám na tom výrazně vydělat.
+                </p>
+            </div>
+            <div class="split-right">
+                <div class="compare-table">
+                    <div class="ct-header">
+                        <span></span>
+                        <span class="ct-col">DPS</span>
+                        <span class="ct-col ct-col--highlight">DIP</span>
+                    </div>
+                    <div class="ct-row">
+                        <span class="ct-label">Strategie</span>
+                        <span class="ct-val">3 typy</span>
+                        <span class="ct-val ct-val--highlight">libovolná</span>
+                    </div>
+                    <div class="ct-row">
+                        <span class="ct-label">Státní příspěvek</span>
+                        <span class="ct-val ct-plus">až 340 Kč/měs.</span>
+                        <span class="ct-val ct-minus ct-val--highlight">není</span>
+                    </div>
+                    <div class="ct-row">
+                        <span class="ct-label">Daňová úleva od</span>
+                        <span class="ct-val">1 700 Kč/měs.</span>
+                        <span class="ct-val ct-val--highlight ct-plus">1. koruny</span>
+                    </div>
+                    <div class="ct-row">
+                        <span class="ct-label">Max. daňová vratka</span>
+                        <span class="ct-val">7 200 Kč/rok</span>
+                        <span class="ct-val ct-val--highlight ct-plus">7 200 Kč/rok</span>
+                    </div>
+                    <div class="ct-row">
+                        <span class="ct-label">Min. vklad pro vratku</span>
+                        <span class="ct-val">5 700 Kč/měs.</span>
+                        <span class="ct-val ct-val--highlight ct-plus">4 000 Kč/měs.</span>
+                    </div>
+                    <div class="ct-row">
+                        <span class="ct-label">Příspěvek zaměstnavatele</span>
+                        <span class="ct-val ct-plus">ano</span>
+                        <span class="ct-val ct-val--highlight ct-plus">ano</span>
+                    </div>
+                    <div class="ct-row">
+                        <span class="ct-label">Flexibilita výběru</span>
+                        <span class="ct-val ct-minus">omezená</span>
+                        <span class="ct-val ct-val--highlight ct-plus">skvělá</span>
+                    </div>
+                    <div class="ct-row">
+                        <span class="ct-label">Průměrný výnos (p.a.)</span>
+                        <span class="ct-val">1,31 – 7,15 %</span>
+                        <span class="ct-val ct-val--highlight ct-plus">dle strategie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SLIDE 4 — ÚSPORA PRO ZAMĚSTNAVATELE
+    ═══════════════════════════════════════════════════ -->
+    <section class="prez-slide slide-accent" id="slide-3" data-slide="3">
+        <div class="slide-inner slide-inner--split">
+            <div class="split-left">
+                <div class="slide-label">Pro zaměstnavatele</div>
+                <h2 class="slide-title">Příspěvek místo <br> <em>navýšení mzdy</em></h2>
+                <p class="slide-body">
+                    Příspěvek na DIP je pro zaměstnavatele výrazně levnější než ekvivalentní zvýšení mzdy. Nevztahuje se na něj odvod sociálního a zdravotního pojištění — celková úspora na odvodech je až <strong>33,8 %</strong> z vyplacené částky.
+                </p>
+                <div class="example-box">
+                    <span class="eb-label">Příklad: příspěvek 1 000 Kč/měs. na zaměstnance</span>
+                    <div class="eb-compare">
+                        <div class="eb-item">
+                            <span class="eb-item-label">Jako mzda</span>
+                            <span class="eb-item-val">1 338 Kč</span>
+                            <span class="eb-item-note">reálné náklady zaměstnavatele</span>
+                        </div>
+                        <div class="eb-arrow">→</div>
+                        <div class="eb-item eb-item--highlight">
+                            <span class="eb-item-label">Jako příspěvek DIP</span>
+                            <span class="eb-item-val">1 000 Kč</span>
+                            <span class="eb-item-note">reálné náklady zaměstnavatele</span>
+                        </div>
+                    </div>
+                    <div class="eb-saving">Úspora: <strong>338 Kč</strong> měsíčně na zaměstnance</div>
+                </div>
+            </div>
+            <div class="split-right">
+                <div class="savings-calc">
+                    <div class="sc-title">Vaše úspora</div>
+                    <div class="sc-row">
+                        <label for="sc-amount">Příspěvek na zaměstnance (Kč/měs.)</label>
+                        <input type="number" id="sc-amount" value="1000" min="0" max="4166" step="100">
+                    </div>
+                    <div class="sc-row">
+                        <label for="sc-employees">Počet zaměstnanců</label>
+                        <input type="number" id="sc-employees" value="20" min="1">
+                    </div>
+                    <div class="sc-result">
+                        <div class="sc-result-item">
+                            <span>Měsíční úspora</span>
+                            <strong id="sc-monthly">—</strong>
+                        </div>
+                        <div class="sc-result-item sc-result-item--big">
+                            <span>Roční úspora</span>
+                            <strong id="sc-annual">—</strong>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="sc-chart" height="160"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SLIDE 5 — HODNOTA PRO ZAMĚSTNANCE
+    ═══════════════════════════════════════════════════ -->
+    <section class="prez-slide slide-light" id="slide-4" data-slide="4">
+        <div class="slide-inner slide-inner--split">
+            <div class="split-left">
+                <div class="slide-label">Pro zaměstnance</div>
+                <h2 class="slide-title">Viditelná<br>a <em>hmatatelná</em><br>hodnota</h2>
+                <p class="slide-body">
+                    Na rozdíl od životního pojištění zaměstnanec skutečně vidí, jak jeho úspory rostou. Efekt složeného úročení s příspěvkem zaměstnavatele je mimořádně silný argument pro retenci talentů.
+                </p>
+                <div class="growth-inputs">
+                    <div class="gi-row">
+                        <label>Příspěvek zaměstnavatele</label>
+                        <div class="gi-val"><span id="gi-employer-val">1 334</span> Kč/měs.</div>
+                        <input type="range" id="gi-employer" min="500" max="4000" step="100" value="1334">
+                    </div>
+                    <div class="gi-row">
+                        <label>Investiční horizont</label>
+                        <div class="gi-val"><span id="gi-years-val">25</span> let</div>
+                        <input type="range" id="gi-years" min="5" max="40" step="1" value="25">
+                    </div>
+                </div>
+                <div class="growth-result">
+                    <div class="growth-result-text">
+                        <span>Hodnota příspěvků zaměstnavatele po</span>
+                        <span id="gr-years">25</span>
+                        <span>letech:</span>
+                    </div>
+                    <strong id="gr-value">—</strong>
+                </div>
+            </div>
+            <div class="split-right">
+                <div class="chart-wrapper" style="height: 500px;">
+                    <canvas id="growth-chart" height="380"></canvas>
+                </div>
+                <p class="chart-note">Výnosnost 7,9 % p.a. · pouze příspěvek zaměstnavatele</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SLIDE 6 — DAŇOVÉ VÝHODY
+    ═══════════════════════════════════════════════════ -->
+    <section class="prez-slide slide-dark" id="slide-5" data-slide="5">
+        <div class="slide-inner slide-inner--centered">
+            <div class="slide-label">Daňová optimalizace</div>
+            <h2 class="slide-title">Daňová úleva —<br><em>až 7 200 Kč ročně</em></h2>
+            <p class="slide-body slide-body--center">
+                Zaměstnanec si může od základu daně odečíst celou výši svého příspěvku na DIP. Při vkladu 4 000 Kč měsíčně dosáhne maximální možné úlevy — a to výrazně dříve než u DPS.
+            </p>
+            <div class="tax-visual">
+                <div class="tv-col">
+                    <div class="tv-label">DPS</div>
+                    <div class="tv-bar-wrap">
+                        <div class="tv-bar tv-bar--dps">
+                            <span>5 700 Kč/měs.</span>
+                        </div>
+                    </div>
+                    <div class="tv-note">min. vklad pro max. úlevu</div>
+                </div>
+                <div class="tv-vs">vs.</div>
+                <div class="tv-col">
+                    <div class="tv-label tv-label--dip">DIP</div>
+                    <div class="tv-bar-wrap">
+                        <div class="tv-bar tv-bar--dip">
+                            <span>4 000 Kč/měs.</span>
+                        </div>
+                    </div>
+                    <div class="tv-note tv-note--dip">min. vklad pro max. úlevu</div>
+                </div>
+            </div>
+            <div class="tax-cards">
+                <div class="tax-card">
+                    <span class="tc-ico"><i class="fa-solid fa-coins"></i></span>
+                    <span class="tc-val">7 200 Kč</span>
+                    <span class="tc-desc">maximální roční daňová úspora pro zaměstnance</span>
+                </div>
+                <div class="tax-card">
+                    <span class="tc-ico"><i class="fa-regular fa-calendar"></i></span>
+                    <span class="tc-val">4 000 Kč</span>
+                    <span class="tc-desc">měsíční příspěvek stačí pro dosažení maxima u DIP</span>
+                </div>
+                <div class="tax-card">
+                    <span class="tc-ico"><i class="fa-solid fa-circle-check"></i></span>
+                    <span class="tc-val">od 1. Kč</span>
+                    <span class="tc-desc">u DIP se daňová úleva počítá z každé vložené koruny</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SLIDE 7 — JAK POMŮŽEME
+    ═══════════════════════════════════════════════════ -->
+    <section class="prez-slide slide-light" id="slide-6" data-slide="6">
+        <div class="slide-inner slide-inner--centered">
+            <div class="slide-label">Naše nabídka</div>
+            <h2 class="slide-title">Jak vám<br><em>pomůžeme</em></h2>
+            <p class="slide-body slide-body--center">
+                Celý proces od první konzultace po nastavení smluv a průběžné poradenství zajistíme za vás. Vaše HR oddělení nebude zatíženo.
+            </p>
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <span class="oc-num">01</span>
+                    <h3>Bezplatná konzultace</h3>
+                    <p>Projdeme vaši aktuální strukturu benefitů a navrhneme optimální řešení přesně pro váš tým.</p>
+                </div>
+                <div class="offer-card">
+                    <span class="oc-num">02</span>
+                    <h3>Nastavení smluv</h3>
+                    <p>Zajistíme sjednání DIP pro vaše zaměstnance — individuálně, nebo hromadně pro celou firmu.</p>
+                </div>
+                <div class="offer-card">
+                    <span class="oc-num">03</span>
+                    <h3>Průběžný servis</h3>
+                    <p>Pravidelný přehled pro HR, pomoc při onboardingu nových zaměstnanců a odpovědi na dotazy kdykoli.</p>
+                </div>
+                <div class="offer-card">
+                    <span class="oc-num">04</span>
+                    <h3>Edukace zaměstnanců</h3>
+                    <p>Prezentace nebo workshop pro váš tým — vysvětlíme benefity DIP srozumitelně a bez žargonu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SLIDE 8 — KONTAKT / CTA
+    ═══════════════════════════════════════════════════ -->
+    <section class="prez-slide slide-hero slide-cta" id="slide-7" data-slide="7">
+        <div class="slide-inner slide-inner--centered">
+            <div class="slide-label">Začněme</div>
+            <h2 class="cta-title">
+                Data jsou jasná.<br>
+                Co to znamená<br>
+                pro <em>vaši firmu</em>?
+            </h2>
+            <p class="slide-body slide-body--center">
+                Demografické projekce a výpočty jsou jedno — vaše konkrétní situace je druhé. Pokud chcete probrat, co tyto benefity znamenají pro váš tým, zůstaňme v kontaktu.
+            </p>
+            <div class="cta-actions">
+                <a href="/contact" class="cta-btn cta-btn--primary">Napsat zprávu &nbsp;→</a>
+                <a href="/" class="cta-btn cta-btn--secondary">Naše stránky</a>
+            </div>
+            <div class="cta-contact-detail">
+                <img src="/media/img/contact/petr.jpg" alt="Petr Geršl" class="cta-avatar">
+                <div>
+                    <strong>Petr Geršl</strong>
+                    <span>Poradce · Do penze bez penze</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual hero-visual--cta">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+        </div>
+    </section>
+
+</div><!-- /prez-container -->
+
+{{end}}

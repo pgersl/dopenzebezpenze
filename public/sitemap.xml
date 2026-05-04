@@ -2,19 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>http://localhost:1313/data/</loc>
+    <lastmod>2000-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2000-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/data/porodnost-1950-2025/</loc>
+    <lastmod>2000-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/data/v%C4%9Bk-do%C5%BEit%C3%AD-2023--2100/</loc>
+    <lastmod>2000-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/data/v%C4%9Bkov%C3%A1-struktura-populace-1947--2024/</loc>
+    <lastmod>2000-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/data/v%C4%9Bkov%C3%A1-struktura-populace-2023--2100/</loc>
+    <lastmod>2000-01-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/data/saldo-d%C5%AFchodov%C3%A9ho-poji%C5%A1t%C4%9Bn%C3%AD-2000--2025/</loc>
+    <lastmod>2000-01-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/data/relativn%C3%AD-saldo-d%C5%AFchodov%C3%A9ho-poji%C5%A1t%C4%9Bn%C3%AD-2000--2075/</loc>
+    <lastmod>2000-01-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/data/relativn%C3%AD-v%C3%BDdaje-na-starobn%C3%AD-d%C5%AFchody-2018--2075/</loc>
+    <lastmod>2000-01-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/data/v%C3%BDvoj-objemu-prost%C5%99edk%C5%AF-na-penzijn%C3%ADm-spo%C5%99en%C3%AD-1995--2025/</loc>
+    <lastmod>2000-01-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/data/</loc>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-  </url><url>
     <loc>http://localhost:1313/fundament/</loc>
   </url><url>
-    <loc>http://localhost:1313/sporeni/zamestnavatele/</loc>
+    <loc>http://localhost:1313/contact/</loc>
   </url><url>
-    <loc>http://localhost:1313/data/porodnost-1950-2025/</loc>
+    <loc>http://localhost:1313/sporeni/jednotlivci/</loc>
+  </url><url>
+    <loc>http://localhost:1313/sporeni/zamestnavatele/</loc>
   </url><url>
     <loc>http://localhost:1313/sporeni/</loc>
   </url><url>
