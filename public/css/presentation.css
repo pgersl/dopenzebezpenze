@@ -530,7 +530,49 @@ body.slide-is-dark .prez-dot {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SLIDE 4 — ÚSPORA PRO ZAMĚSTNAVATELE
+   SLIDE 4 — PROČ PŘISPÍVAT
+   ═══════════════════════════════════════════════════════════ */
+
+.hr-reasons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.hr-card {
+    background: rgba(242, 239, 233, 0.07);
+    border-radius: var(--border-radius);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-shadow: 0 4px 24px rgba(28, 28, 24, 0.06);
+    transition: var(--transition);
+    text-align: center;
+    color: var(--text-100);
+    font-size: 0.85rem;
+    line-height: 1.65;
+}
+
+.hr-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(28, 28, 24, 0.1);
+}
+
+.hr-card h4 {
+    color: var(--background);
+}
+
+.hr-card-icon {
+    text-align: center;
+    color: var(--primary-200);
+    font-size: 2rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SLIDE 5 — ÚSPORA PRO ZAMĚSTNAVATELE
    ═══════════════════════════════════════════════════════════ */
 
 .slide-accent .slide-title {
@@ -705,7 +747,7 @@ body.slide-is-dark .prez-dot {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SLIDE 5 — HODNOTA PRO ZAMĚSTNANCE
+   SLIDE 6 — HODNOTA PRO ZAMĚSTNANCE
    ═══════════════════════════════════════════════════════════ */
 
 .growth-inputs {
@@ -781,7 +823,7 @@ body.slide-is-dark .prez-dot {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SLIDE 6 — DAŇOVÉ VÝHODY
+   SLIDE 7 — DAŇOVÉ VÝHODY
    ═══════════════════════════════════════════════════════════ */
 
 .tax-visual {
@@ -906,7 +948,7 @@ body.slide-is-dark .prez-dot {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SLIDE 7 — JAK POMŮŽEME
+   SLIDE 8 — JAK POMŮŽEME
    ═══════════════════════════════════════════════════════════ */
 
 .offer-grid {
@@ -960,7 +1002,7 @@ body.slide-is-dark .prez-dot {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   SLIDE 8 — CTA
+   SLIDE 9 — CTA
    ═══════════════════════════════════════════════════════════ */
 
 .slide-cta {
