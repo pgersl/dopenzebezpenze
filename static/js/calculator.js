@@ -8,6 +8,8 @@ const STRATEGIES = [
 
 const COLORS = ['#403726', '#816f4b', '#b4a27e', '#679867', '#4c704c'];
 
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIRH1Nrr2ZblR85Ii8UgJkzZjJs-o7medHKcN_hC7ffSP5Q6IliJYeUMY4l6JKCmb5/exec";
+
 function fmt(n) {
   return Math.round(n).toLocaleString('cs-CZ') + ' Kč';
 }
@@ -51,15 +53,11 @@ function calcFV(inputs, strategy, yearIndex) {
     fvYearlyEmployer += yearlyEmployer * Math.pow(1 + r, n - y);
   }
 
-  // ---------------- TAX REINVESTMENT (correct recursion) ----------------
   let fvTax = 0;
-
   if (reinvestTax) {
     let prevDeduction = 0;
-
     for (let y = 1; y <= n; y++) {
       const baseYearly = monthlyClient * 12;
-
       let effectiveBase;
       if (isDIP) {
         effectiveBase = baseYearly + prevDeduction;
@@ -68,11 +66,8 @@ function calcFV(inputs, strategy, yearIndex) {
         const qualifyingMonthly = Math.max(0, monthlyEffective - 1700);
         effectiveBase = qualifyingMonthly * 12;
       }
-
       const deduction = Math.min(0.15 * effectiveBase, 7200);
-
       fvTax += deduction * Math.pow(1 + r, n - y);
-
       prevDeduction = deduction;
     }
   }
@@ -105,7 +100,7 @@ function calcTotalInvested(inputs, strategy) {
 }
 
 function getInputs() {
-  STRATEGIES.find(s => s.key === 'dip').rate = parseFloat(document.getElementById('DIP-yield').value) / 100 || 0;   
+  STRATEGIES.find(s => s.key === 'dip').rate = parseFloat(document.getElementById('DIP-yield').value) / 100 || 0;
   return {
     monthlyClient:   parseFloat(document.getElementById('monthly-client').value)   || 0,
     monthlyEmployer: parseFloat(document.getElementById('monthly-employer').value)  || 0,
@@ -171,6 +166,105 @@ function renderProfitsTable(inputs) {
       row.values.map(v => `<td>${fmt(v)}</td>`).join('');
     tbody.appendChild(tr);
   });
+
+  // Store results for the CTA box
+  window._calcResults = {
+    dipFV: fvs[4],
+    dipProfit: profits[4],
+    monthlyClient: inputs.monthlyClient,
+    horizon: inputs.horizon,
+  };
+
+  updateCalculatorCTA();
+}
+
+// ── Calculator CTA box ─────────────────────────────────────────────────────
+
+function updateCalculatorCTA() {
+  const cta = document.getElementById('calc-cta');
+  if (!cta || !window._calcResults) return;
+
+  const { dipFV, monthlyClient, horizon } = window._calcResults;
+
+  // Only show if user has entered meaningful values
+  if (monthlyClient <= 0) {
+    cta.style.display = 'none';
+    return;
+  }
+
+  cta.style.display = 'flex';
+
+  const dipFVFormatted = Math.round(dipFV).toLocaleString('cs-CZ');
+  document.getElementById('cta-result-highlight').textContent =
+    `${dipFVFormatted} Kč za ${horizon} let`;
+}
+
+function initCalculatorCTA() {
+  const resultsSection = document.querySelector('.calc-results');
+  if (!resultsSection) return;
+
+  const ctaHTML = `
+    <div class="calc-cta-box visible" id="calc-cta" style="display:none;">
+      <div class="calc-cta-text visible">
+        <span class="sup-heading visible">Váš výsledek</span>
+        <h4 class="visible">DIP může vynést až <span id="cta-result-highlight"></span></h4>
+        <p class="visible">Chcete vědět, jak konkrétně tohoto výsledku dosáhnout?<br>Rezervujte si nezávaznou 30 minutovou konzultaci.</p>
+      </div>
+      <div class="calc-cta-actions visible">
+        <a class="visible primary-button" href="https://tidycal.com/pgersl05/do-penze-bez-penze-btc" target="_blank" class="calc-cta-button">
+          Rezervovat konzultaci &nbsp; &rarr;
+        </a>
+        <div class="calc-cta-form visible">
+          <p class="calc-cta-form-label visible">Nebo nechte e-mail — ozveme se:</p>
+          <div class="calc-cta-inputs visible">
+            <input type="text"  id="cta-name"  placeholder="Jméno" />
+            <input type="email" id="cta-email" placeholder="E-mail" />
+            <button id="cta-submit">Odeslat</button>
+          </div>
+          <p id="cta-feedback" class="visible" style="font-size:.75rem; margin-top:.5rem;"></p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  resultsSection.insertAdjacentHTML('beforeend', ctaHTML);
+
+  document.getElementById('cta-submit').addEventListener('click', async () => {
+    const name  = document.getElementById('cta-name').value.trim();
+    const email = document.getElementById('cta-email').value.trim();
+    const feedback = document.getElementById('cta-feedback');
+
+    if (!email) {
+      feedback.textContent = 'Vyplňte prosím e-mail.';
+      feedback.style.color = '#7a4a3a';
+      return;
+    }
+
+    const { dipFV, monthlyClient, horizon } = window._calcResults || {};
+
+    const payload = {
+      jmeno:    name,
+      email:    email,
+      zprava:   `Zájem ze srovnávače — DIP projekce: ${Math.round(dipFV).toLocaleString('cs-CZ')} Kč / horizont: ${horizon} let / měsíční úložka: ${monthlyClient} Kč`,
+      source:   'srovnavac-cta',
+    };
+
+    document.getElementById('cta-submit').disabled = true;
+
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    }).catch(() => {});
+
+    setTimeout(() => {
+      feedback.textContent = 'Odesláno — ozveme se do 2 pracovních dnů.';
+      feedback.style.color = 'rgba(242,239,233,0.2)';
+      document.getElementById('cta-name').value  = '';
+      document.getElementById('cta-email').value = '';
+    }, 600);
+  });
 }
 
 let growthChart = null;
@@ -233,10 +327,7 @@ function renderChart(inputs) {
       scales: {
         x: {
           title: { display: true, text: 'Rok', color: tickColor, font: { family: "'Inter', sans-serif", size: 11 } },
-          ticks: {
-            color: tickColor,
-            font: { size: 11 },
-          },
+          ticks: { color: tickColor, font: { size: 11 } },
           grid: { color: gridColor },
         },
         y: {
@@ -269,4 +360,6 @@ function update() {
 });
 document.getElementById('tax-deduction').addEventListener('change', update);
 
+// Init CTA box then run first update
+initCalculatorCTA();
 update();

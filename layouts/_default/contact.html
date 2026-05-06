@@ -4,42 +4,60 @@
 
 {{define "scripts"}}
     <script src="/js/contact.js" defer></script>
+    <script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
 {{end}}
 
 {{define "main"}}
     {{ partial "header.html" . }}
     <article>
-        <div class="contact-form">
-            <div class="contact-form-short">
-                <div class="input-group">
-                    <label for="name">Jméno</label>
-                    <input type="text" id="name" name="jmeno" placeholder="Vaše jméno">
-                </div>
-                <div class="input-group">
-                    <label for="surname">Příjmení</label>
-                    <input type="text" id="surname" name="prijmeni" placeholder="Vaše příjmení">
-                </div>
-                <div class="input-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Váš e-mail">
-                </div>
-                <div class="input-group">
-                    <label for="tel">Tel. č.</label>
-                    <input type="tel" id="tel" name="telefon" placeholder="Váš telefonní číslo">
+        <div class="contact-primary">
+            <div class="booking-section">
+                <h3>
+                    <span class="sup-heading">Nejrychlejší cesta</span>
+                    Rezervujte si konzultaci
+                </h3>
+                <p class="booking-desc">30 minut, nezávazně. Projdeme vaši situaci a navrhneme konkrétní kroky.</p>
+                <div id="tidycal-embed" data-path="pgersl05/do-penze-bez-penze-btc"></div>
+            </div>
+
+            <div class="contact-form-section">
+                <h3>
+                    <span class="sup-heading">Nebo napište</span>
+                    Kontaktní formulář
+                </h3>
+                <div class="contact-form">
+                    <div class="contact-form-short">
+                        <div class="input-group">
+                            <label for="name">Jméno</label>
+                            <input type="text" id="name" name="jmeno" placeholder="Vaše jméno">
+                        </div>
+                        <div class="input-group">
+                            <label for="surname">Příjmení</label>
+                            <input type="text" id="surname" name="prijmeni" placeholder="Vaše příjmení">
+                        </div>
+                        <div class="input-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="Váš e-mail">
+                        </div>
+                        <div class="input-group">
+                            <label for="tel">Tel. č.</label>
+                            <input type="tel" id="tel" name="telefon" placeholder="Váš telefonní číslo">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Zpráva</label>
+                        <textarea id="message" name="zprava" placeholder="Vaše zpráva"></textarea>
+                    </div>
+                    <button id="submit" type="submit">Odeslat</button>
                 </div>
             </div>
-            <div class="input-group">
-                <label for="message">Zpráva</label>
-                <textarea id="message" name="zprava" placeholder="Vaše zpráva"></textarea>
-            </div>
-            <button id="submit" type="submit">Odeslat</button>
         </div>
         <div class="contact-info">
             <div class="contact">
                 <img src="/media/img/contact/petr.jpg">
                 <h3>
                     Petr Geršl
-                    <span class="sup-heading">Administrátor · Poradce</span>
+                    <span class="sup-heading">Administrátor, poradce</span>
                 </h3>
                 <p>Projekt Do penze bez penze vznikl z přesvědčení, že o důchodovém systému se mluví příliš málo a příliš nepřesně. Cílem je přinést data bez ideologického zabarvení a pomoci lidem udělat informované rozhodnutí.</p>
                 <div class="contact-links">

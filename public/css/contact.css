@@ -10,6 +10,38 @@ img {
     filter: grayscale(1);
 }
 
+/* Primary column — booking + form stacked */
+.contact-primary {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Booking section */
+.booking-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.booking-desc {
+    color: var(--secondary);
+    margin-bottom: .5rem;
+}
+#tidycal-embed {
+    width: 100%;
+    min-height: 500px;
+}
+
+/* Divider between booking and form */
+.contact-form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--background-300);
+}
+
+/* Existing contact info sidebar */
 .contact {
     display: flex;
     flex-direction: column;
@@ -44,6 +76,7 @@ img {
     font-size: 1.3rem;
 }
 
+/* Form */
 .contact-form {
     width: 100%;
     display: flex;
@@ -77,7 +110,7 @@ img {
 }
 .contact-form textarea {
     resize: vertical;
-    min-height: 200px;
+    min-height: 150px;
 }
 .contact-form input:focus, .contact-form textarea:focus {
     outline: none;
@@ -103,5 +136,8 @@ img {
     article {
         display: flex;
         flex-direction: column-reverse;
+    }
+    .contact-form-short {
+        grid-template-columns: 1fr;
     }
 }

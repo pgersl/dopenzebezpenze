@@ -218,6 +218,12 @@ header p::before {
 .cta * {
     max-width: 500px;
 }
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
 
 .text-primary {
     color: var(--primary);

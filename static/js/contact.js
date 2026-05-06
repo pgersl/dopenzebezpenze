@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyoJ9FDD3mPLL7jV4OKki3nYWx_QpPtyuvkaK_KEXtgj3i6hKBFpqsdhWR926_EFv9R/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzCU2LOhBEJPmF6Jne1ONnuCqURsOTlKV1mfmE8H45qjhZsku3Afb-cVzooxy4_hGRx/exechttps://script.google.com/macros/s/AKfycbwIRH1Nrr2ZblR85Ii8UgJkzZjJs-o7medHKcN_hC7ffSP5Q6IliJYeUMY4l6JKCmb5/exec";
 
 document.getElementById("submit").addEventListener("click", async () => {
   const btn = document.getElementById("submit");
